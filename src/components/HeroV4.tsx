@@ -88,7 +88,7 @@ export default function HeroV4() {
         </div>
 
         {/* Code Block - Secondary, reduced visual weight */}
-        <div className="max-w-md mx-auto mb-5">
+        <div className="max-w-[420px] mx-auto mb-5">
           <div className="rounded-[12px] overflow-hidden border border-border bg-[#1e1e1e] shadow-sm opacity-90">
             {/* Editor Title Bar */}
             <div className="flex items-center gap-2 px-3 py-2 bg-[#252526] border-b border-[#3c3c3c]">
