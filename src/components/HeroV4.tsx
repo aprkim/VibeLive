@@ -65,15 +65,17 @@ export default function HeroV4() {
 
       <div className="max-w-[980px] mx-auto relative z-10">
         {/* Copy */}
-        <div className="text-center mb-20">
-          <h1 className="text-4xl md:text-5xl font-bold text-text leading-[1.15] mb-6">
-            Add real human connection to your vibecoded app.
+        <div className="text-center mb-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-text leading-[1.25] md:leading-[1.3] mb-6">
+            Add real human connection<br className="hidden sm:block" /> to your vibecoded app.
           </h1>
-          <p className="text-xl text-muted mb-12 max-w-2xl mx-auto">
-            Add <span className="text-accent">live video chat</span> to your app — no WebRTC, no servers, no infra decisions.
+          <p className="text-xl text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
+            VibeLive expands what you can build by letting AI add video.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
-            <button className="btn-primary px-7 py-3.5 text-base w-full sm:w-auto">
+
+          {/* Buttons with improved hierarchy */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+            <button className="btn-primary px-7 py-3.5 text-base w-full sm:w-auto shadow-lg shadow-accent/20">
               Get the VibeLive file
             </button>
             <button className="btn-secondary px-7 py-3.5 text-base w-full sm:w-auto">
