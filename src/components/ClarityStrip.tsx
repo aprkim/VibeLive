@@ -8,7 +8,7 @@ export default function ClarityStrip() {
         <p className="text-sm md:text-base text-muted max-w-xl mx-auto mb-5 md:mb-5 leading-relaxed">
           Video breaks vibecoding. <span className="font-medium">Vibe</span>Live removes the barrier.
         </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-x-6 md:gap-y-2 text-sm font-medium">
           <span className="flex items-center gap-1.5 text-text/80">
             <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
