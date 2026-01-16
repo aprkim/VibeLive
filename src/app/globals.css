@@ -1,26 +1,293 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Backgrounds & Surfaces */
+  --bg: #f7f9f8;
+  --card: #ffffff;
+  --soft: #f0f4f3;
+
+  /* Text */
+  --text: #1e293b;
+  --muted: #64748b;
+  --tertiary: #9ca3af;
+
+  /* Borders & Dividers */
+  --border: #e2e8f0;
+  --border-soft: #dbe2ea;
+
+  /* Primary Accent — VibeLive Teal */
+  --accent: #0EA5A4;
+  --accent-hover: #0d9488;
+  --accent-soft: rgba(14, 165, 164, 0.10);
+  --accent-border: rgba(14, 165, 164, 0.35);
+
+  /* Live / Motion Signal — Soft Blue */
+  --accent-live: #60a5fa;
+
+  /* Live / Presence Status (Green System) */
+  --live-bg: #e8f4ed;
+  --live-border: #a6c5a3;
+  --live-text: #324252;
+
+  /* Layout */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --max-width: 980px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --bg: #0f172a;
+  --card: #111827;
+  --soft: #1e293b;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --tertiary: #6b7280;
+  --border: #1f2937;
+  --border-soft: #374151;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Primary Button */
+.btn-primary {
+  @apply inline-flex items-center justify-center font-semibold text-white transition-colors duration-200;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  @apply inline-flex items-center justify-center font-medium transition-colors duration-200;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--soft);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-soft);
+}
+
+/* LIVE Badge / Pill */
+.badge-live {
+  @apply inline-flex items-center gap-1.5 text-sm font-medium;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--live-bg);
+  border: 1px solid var(--live-border);
+  color: var(--live-text);
+}
+
+.badge-live::before {
+  content: "";
+  @apply w-2 h-2 rounded-full animate-pulse;
+  background-color: var(--accent-live);
+}
+
+/* Card */
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* Card with accent border */
+.card-accent {
+  background-color: var(--card);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+}
+
+/* Subtle floating animations for background presence dots */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-8px) translateX(4px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-4px) translateX(-4px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-12px) translateX(2px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes float-slower {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.5;
+  }
+  33% {
+    transform: translateY(-6px) translateX(-6px);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translateY(-10px) translateX(4px);
+    opacity: 0.4;
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float-slower 16s ease-in-out infinite;
+}
+
+/* Scrolling code background animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-33.33%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Connection line fade in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* HeroV5 - Presence node animations */
+@keyframes presence-pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes presence-pulse-delayed {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes presence-breathe {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes frame-breathe {
+  0%, 100% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.18;
+  }
+}
+
+.presence-node-pulse {
+  animation: presence-pulse 4s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.presence-node-pulse-delayed {
+  animation: presence-pulse-delayed 4s ease-in-out infinite;
+  animation-delay: 2s;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.presence-node-pulse-delay-1 {
+  animation: presence-pulse 5s ease-in-out infinite;
+  animation-delay: 0.5s;
+  transform-origin: center;
+}
+
+.presence-node-pulse-delay-2 {
+  animation: presence-pulse 4.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+  transform-origin: center;
+}
+
+.presence-node-pulse-delay-3 {
+  animation: presence-pulse 5.5s ease-in-out infinite;
+  animation-delay: 3s;
+  transform-origin: center;
+}
+
+.presence-node-pulse-delay-4 {
+  animation: presence-pulse 4s ease-in-out infinite;
+  animation-delay: 2.5s;
+  transform-origin: center;
+}
+
+.presence-node {
+  animation: presence-breathe 8s ease-in-out infinite;
+}
+
+.video-frame {
+  animation: frame-breathe 12s ease-in-out infinite;
+}
+
+/* HeroV6 - Falling code animation (very slow and subtle) */
+@keyframes fall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(100vh + 50px)) rotate(1deg);
+    opacity: 0;
+  }
+}
+
+.animate-fall {
+  animation: fall 35s linear infinite;
 }

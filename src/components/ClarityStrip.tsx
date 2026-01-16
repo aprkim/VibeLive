@@ -1,0 +1,34 @@
+export default function ClarityStrip() {
+  return (
+    <section className="py-16 md:py-20 px-6 bg-soft">
+      <div className="max-w-[720px] mx-auto text-center">
+        <h2 className="text-xl md:text-[28px] font-semibold text-text/90 mb-5 md:mb-6 leading-tight">
+          <span className="font-semibold">Vibe</span>Live is not a video app. It&apos;s a capability.
+        </h2>
+        <p className="text-sm md:text-base text-muted max-w-xl mx-auto mb-5 md:mb-5 leading-relaxed">
+          Video breaks vibecoding. <span className="font-medium">Vibe</span>Live removes the barrier.
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium">
+          <span className="flex items-center gap-1.5 text-text/80">
+            <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            No video setup
+          </span>
+          <span className="flex items-center gap-1.5 text-text/80">
+            <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Works inside your app
+          </span>
+          <span className="flex items-center gap-1.5 text-text/80">
+            <svg className="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            Built for vibecoding
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}

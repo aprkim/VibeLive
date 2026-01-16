@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import HeroV4 from "@/components/HeroV4";
+import HeroV7 from "@/components/HeroV7";
 import ClarityStrip from "@/components/ClarityStrip";
 import BeforeAfter from "@/components/BeforeAfter";
 import HowVibecodersUse from "@/components/HowVibecodersUse";
@@ -10,11 +10,11 @@ import FounderStory from "@/components/FounderStory";
 import CTAV2 from "@/components/CTAV2";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function HomeV2() {
   return (
     <main className="min-h-screen bg-bg">
       <Header />
-      <HeroV4 />
+      <HeroV7 />
       <ClarityStrip />
       <BeforeAfter />
       <HowVibecodersUse />
