@@ -16,6 +16,8 @@ export default function BeforeAfter() {
                   </div>
                   <span className="text-sm font-medium text-text">MyApp</span>
                 </div>
+                {/* Invisible placeholder to match height of LIVE badge */}
+                <span className="text-xs px-2 py-0.5 invisible">LIVE</span>
               </div>
               {/* App Content */}
               <div className="p-5">
