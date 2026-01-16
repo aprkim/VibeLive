@@ -34,7 +34,7 @@ export default function FounderStoryGlass() {
               </p>
               <div className="mt-8 pt-6 border-t border-black/10">
                 <p className="text-muted">
-                  April & Marty
+                  Marty & April
                 </p>
               </div>
             </div>

@@ -33,7 +33,7 @@ export default function FounderStory() {
               </p>
               <div className="mt-8 pt-6 border-t border-border">
                 <p className="text-muted">
-                  April & Marty
+                  Marty & April
                 </p>
               </div>
             </div>
