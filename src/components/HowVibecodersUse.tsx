@@ -5,9 +5,9 @@ export default function HowVibecodersUse() {
         <h2 className="text-2xl md:text-3xl font-bold text-text mb-8 text-center">
           Three steps. No workflow change.
         </h2>
-        <div className="flex flex-col md:flex-row items-start justify-center gap-6 md:gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-4">
           {/* Step 1 */}
-          <div className="text-center flex-1 max-w-[260px]">
+          <div className="text-center flex-1 w-full max-w-[260px]">
             <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg font-semibold mx-auto mb-4">
               1
             </div>
@@ -27,7 +27,7 @@ export default function HowVibecodersUse() {
           </div>
 
           {/* Step 2 */}
-          <div className="text-center flex-1 max-w-[260px]">
+          <div className="text-center flex-1 w-full max-w-[260px]">
             <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg font-semibold mx-auto mb-4">
               2
             </div>
@@ -47,7 +47,7 @@ export default function HowVibecodersUse() {
           </div>
 
           {/* Step 3 */}
-          <div className="text-center flex-1 max-w-[260px]">
+          <div className="text-center flex-1 w-full max-w-[260px]">
             <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center text-lg font-semibold mx-auto mb-4">
               3
             </div>
