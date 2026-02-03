@@ -83,36 +83,40 @@ export default function HeroV4Claude() {
           </p>
         </div>
 
-        {/* Claude Code Input Box */}
+        {/* AI Code Prompt */}
         <div className="max-w-[520px] mx-auto mb-5">
-          <div className="rounded-xl overflow-hidden border border-[#2a2a2a] bg-[#1a1a1a] shadow-lg">
-            {/* Top bar */}
-            <div className="flex items-center gap-2 px-4 py-2.5 border-b border-[#2a2a2a]">
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#3a3a3a]"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-[#3a3a3a]"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-[#3a3a3a]"></div>
-              </div>
-              <span className="text-[11px] text-[#666] ml-1.5 font-medium tracking-wide">claude</span>
-            </div>
-            {/* Input area */}
-            <div className="px-4 py-4">
+          <p className="text-[11px] text-[#555] font-mono uppercase tracking-widest mb-2 ml-1">AI Code Prompt</p>
+          <div className="rounded-xl overflow-hidden border border-[#2a2a2a] bg-[#0d0d0d] shadow-2xl shadow-black/50 relative group">
+            {/* Copy button */}
+            <button
+              onClick={() => {
+                const text = `Add live video chat to this app using VibeLive.\nUse the link below. Use a teal UI theme.\nhttps://vibelive.site/start/try?key=guest-teal-14d`;
+                navigator.clipboard.writeText(text);
+                const btn = document.getElementById('copy-btn');
+                if (btn) { btn.textContent = 'Copied!'; setTimeout(() => { btn.textContent = 'Copy'; }, 1500); }
+              }}
+              id="copy-btn"
+              className="absolute top-3 right-3 text-[10px] font-mono text-[#555] hover:text-white/70 bg-[#1a1a1a] hover:bg-[#252525] border border-[#2a2a2a] rounded-md px-2 py-1 transition-colors z-10"
+            >
+              Copy
+            </button>
+            <div className="px-5 py-4 pr-16">
               <div className="flex items-start gap-3">
-                <span className="text-[#6b6b6b] text-sm mt-[1px] select-none font-medium">&gt;</span>
-                <p className="text-[13px] text-[#e0e0e0] leading-relaxed">
-                  Add live video chat to this app using VibeLive.{'\n'}
+                <span className="text-accent text-sm mt-[1px] select-none shrink-0 font-mono font-bold" style={{ textShadow: '0 0 8px rgba(14,165,164,0.4)' }}>❯</span>
+                <p className="text-[13px] text-[#ccc] leading-relaxed font-mono">
+                  Add live video chat to this app using VibeLive.
                   <br />
                   Use the link below. Use a <span className="font-bold text-white">teal UI theme</span>.
+                  <br />
+                  <span className="text-[#5b9fc7]/70 text-[12px]">https://vibelive.site/start/try?key=guest-teal-14d</span>
                 </p>
               </div>
             </div>
           </div>
+          <p className="text-center text-muted/50 text-xs mt-3">
+            Paste this into your AI coding assistant.
+          </p>
         </div>
-
-        {/* Caption */}
-        <p className="text-center text-muted/70 text-xs mb-5">
-          One prompt. Video just appears inside your app.
-        </p>
 
         {/* Product Card */}
         <div className="max-w-[420px] mx-auto">

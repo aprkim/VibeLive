@@ -124,7 +124,7 @@ export default function HeroV4Claude6() {
             <div className="px-4 py-4 md:px-7 md:py-6 md:pr-28">
               <div className="flex items-start gap-3">
                 <span
-                  className="mt-[1px] select-none shrink-0 font-mono"
+                  className="select-none shrink-0 font-mono"
                   style={{ color: 'rgba(160, 255, 240, 0.9)', fontWeight: 600, fontSize: '15px' }}
                 >❯</span>
                 <p className="font-mono" style={{ fontSize: '15px', lineHeight: 1.55, color: 'rgba(230, 255, 250, 0.9)', overflowWrap: 'anywhere' as const, wordBreak: 'break-word' as const }}>

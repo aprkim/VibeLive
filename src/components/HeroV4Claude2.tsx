@@ -104,54 +104,135 @@ export default function HeroV4Claude2() {
           </div>
         </div>
 
-        {/* Secondary buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
-          <button className="btn-secondary px-6 py-2.5 text-sm w-full sm:w-auto opacity-70 hover:opacity-100 transition-opacity">
-            Get the VibeLive file
-          </button>
-          <button className="btn-secondary px-6 py-2.5 text-sm w-full sm:w-auto opacity-70 hover:opacity-100 transition-opacity">
-            How it works
-          </button>
-        </div>
+        {/* Three Product Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[980px] mx-auto">
 
-        {/* Product Card */}
-        <div className="max-w-[420px] mx-auto">
+          {/* 1. TabbiMate — Language Practice (Red) */}
           <div className="card overflow-hidden shadow-lg">
-            {/* App Title Bar */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-border bg-soft">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-soft">
               <div className="flex items-center gap-1">
-                <span className="text-base font-bold text-[#BF3143]">Tabbi</span>
-                <span className="text-base font-bold text-text">Mate</span>
+                <span className="text-sm font-bold text-[#BF3143]">Tabbi</span>
+                <span className="text-sm font-bold text-text">Mate</span>
               </div>
-              <span className="badge-live text-xs">LIVE</span>
+              <span className="badge-live text-[10px]">LIVE</span>
             </div>
-            {/* App Content */}
-            <div className="p-6">
-              <div className="mb-5">
-                <div className="text-xs text-muted mb-1">Your Session</div>
-                <div className="text-lg font-medium text-muted">Live talk in English #7</div>
+            <div className="p-4">
+              <div className="mb-3">
+                <div className="text-[10px] text-muted mb-0.5">Your Session</div>
+                <div className="text-sm font-medium text-muted flex items-center gap-2">
+                  <span>🇺🇸</span>
+                  <span className="text-muted/40">⇄</span>
+                  <span>🇯🇵</span>
+                  <span className="ml-1">English ↔ 日本語</span>
+                </div>
               </div>
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-2 mb-4">
                 <div className="flex -space-x-2">
-                  <div className="w-9 h-9 rounded-full border-2 border-card relative">
+                  <div className="w-7 h-7 rounded-full border-2 border-card relative">
                     <img src="https://i.pravatar.cc/150?img=32" alt="User A" className="w-full h-full rounded-full object-cover" />
-                    <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-card"></span>
+                    <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full border-2 border-card"></span>
                   </div>
-                  <div className="w-9 h-9 rounded-full border-2 border-card relative">
+                  <div className="w-7 h-7 rounded-full border-2 border-card relative">
                     <img src="https://i.pravatar.cc/150?img=47" alt="User B" className="w-full h-full rounded-full object-cover" />
-                    <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-card"></span>
+                    <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full border-2 border-card"></span>
                   </div>
                 </div>
-                <span className="text-sm text-muted">2 online</span>
+                <span className="text-xs text-muted">2 online</span>
               </div>
-              <button className="btn-primary w-full py-3 text-base flex items-center justify-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#BF3143] hover:bg-[#a82a3a] text-white font-medium transition-colors">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
-                Start Video
+                Start Talking
               </button>
             </div>
           </div>
+
+          {/* 2. TinyRoom — Group Video Chat (Green) */}
+          <div className="card overflow-hidden shadow-lg">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-soft">
+              <div className="flex items-center gap-1.5">
+                <span className="text-sm font-bold text-[#22c55e]">Tiny</span>
+                <span className="text-sm font-bold text-text">Room</span>
+              </div>
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#22c55e]/15 text-[#22c55e] border border-[#22c55e]/30">LIVE</span>
+            </div>
+            <div className="p-4">
+              <div className="mb-3">
+                <div className="text-[10px] text-muted mb-0.5">Room</div>
+                <div className="text-sm font-medium text-muted">Sunday Hangout 🌿</div>
+              </div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="flex -space-x-1.5">
+                  <div className="w-6 h-6 rounded-full border-2 border-card overflow-hidden">
+                    <img src="https://i.pravatar.cc/150?img=1" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-6 h-6 rounded-full border-2 border-card overflow-hidden">
+                    <img src="https://i.pravatar.cc/150?img=5" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-6 h-6 rounded-full border-2 border-card overflow-hidden">
+                    <img src="https://i.pravatar.cc/150?img=8" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-6 h-6 rounded-full border-2 border-card overflow-hidden">
+                    <img src="https://i.pravatar.cc/150?img=11" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-6 h-6 rounded-full border-2 border-card overflow-hidden">
+                    <img src="https://i.pravatar.cc/150?img=16" alt="" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="w-6 h-6 rounded-full border-2 border-card overflow-hidden">
+                    <img src="https://i.pravatar.cc/150?img=20" alt="" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+                <span className="text-xs text-muted">6 in room</span>
+              </div>
+              <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#22c55e] hover:bg-[#16a34a] text-white font-medium transition-colors">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                Join Room
+              </button>
+            </div>
+          </div>
+
+          {/* 3. TinyMentor — 1:1 Mentoring (Purple) */}
+          <div className="card overflow-hidden shadow-lg">
+            <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-soft">
+              <div className="flex items-center gap-1.5">
+                <span className="text-sm font-bold text-[#8b5cf6]">Tiny</span>
+                <span className="text-sm font-bold text-text">Mentor</span>
+              </div>
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#8b5cf6]/15 text-[#8b5cf6] border border-[#8b5cf6]/30">1 : 1</span>
+            </div>
+            <div className="p-4">
+              <div className="mb-3">
+                <div className="text-[10px] text-muted mb-0.5">Session</div>
+                <div className="text-sm font-medium text-muted flex items-center gap-2">
+                  <span>Career Check-in</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#8b5cf6]/10 text-[#8b5cf6] border border-[#8b5cf6]/20 font-mono">15:00</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="flex -space-x-2">
+                  <div className="w-7 h-7 rounded-full border-2 border-card relative">
+                    <img src="https://i.pravatar.cc/150?img=25" alt="Mentee" className="w-full h-full rounded-full object-cover" />
+                    <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full border-2 border-card"></span>
+                  </div>
+                  <div className="w-7 h-7 rounded-full border-2 border-[#8b5cf6]/50 relative">
+                    <img src="https://i.pravatar.cc/150?img=52" alt="Mentor" className="w-full h-full rounded-full object-cover" />
+                    <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-[#8b5cf6] rounded-full border-2 border-card"></span>
+                  </div>
+                </div>
+                <span className="text-xs text-muted">Mentor ready</span>
+              </div>
+              <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-medium transition-colors">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                Start Session
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

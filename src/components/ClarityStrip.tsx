@@ -2,7 +2,7 @@ export default function ClarityStrip() {
   return (
     <section className="py-16 md:py-20 px-6 bg-soft">
       <div className="max-w-[720px] mx-auto text-center">
-        <h2 className="text-xl md:text-[28px] font-semibold text-white mb-5 md:mb-6 leading-tight">
+        <h2 className="text-2xl md:text-3xl font-semibold text-white mb-5 md:mb-6 leading-tight">
           <span className="font-semibold">Vibe</span>Live is not a video app. It&apos;s a capability.
         </h2>
         <p className="text-sm md:text-base text-white/70 max-w-xl mx-auto mb-5 md:mb-5 leading-relaxed">

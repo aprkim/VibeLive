@@ -32,10 +32,10 @@ export default function HowVibecodersUse() {
               2
             </div>
             <h3 className="text-base font-semibold text-text mb-1">
-              Drop in one file
+              One copy. That&apos;s it.
             </h3>
             <p className="text-xs text-muted">
-              Add vibelive.config.ts + your key.
+              Paste once into your AI coding assistant.
             </p>
           </div>
 
@@ -52,10 +52,10 @@ export default function HowVibecodersUse() {
               3
             </div>
             <h3 className="text-base font-semibold text-text mb-1">
-              Ask AI to add video
+              Ask AI to add video chat
             </h3>
             <p className="text-xs text-muted">
-              Video appears inside your app.
+              Live conversation appears inside your app.
             </p>
           </div>
         </div>
