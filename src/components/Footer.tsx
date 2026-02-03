@@ -9,10 +9,7 @@ export default function Footer() {
             {/* Left: Logo + Tagline stacked */}
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-sm bg-accent flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">V</span>
-                </div>
-                <span className="font-semibold text-text"><span className="font-semibold">Vibe</span>Live</span>
+                <img src="/VibeLive/vibelive-logo.png" alt="VibeLive" className="h-6" />
               </div>
               <p className="text-xs text-muted/70">
                 A bridge for real human connection in the AI era.
