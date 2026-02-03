@@ -2,7 +2,7 @@
 
 export default function CTAV2() {
   return (
-    <section className="py-28 md:py-32 px-6 bg-accent/[0.04] border-t border-border/50">
+    <section className="py-28 md:py-32 px-6 bg-accent/[0.04] border-t-0">
       <div className="max-w-[980px] mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-text mb-4">
           Ready to add real human connection to your app?
