@@ -82,7 +82,7 @@ export default function HeroV4() {
               How it works
             </button>
           </div>
-          <p className="text-sm text-text/60">
+          <p className="text-sm text-white/60">
             <em>No video infrastructure. No signaling servers. Just keep vibecoding.</em>
           </p>
         </div>

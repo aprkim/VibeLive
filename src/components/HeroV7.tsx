@@ -182,7 +182,7 @@ export default VibeLive.init({
               </button>
             </div>
 
-            <p className="text-xs text-tertiary/60 mb-8">
+            <p className="text-xs text-white/60 mb-8">
               <em>No video infrastructure. No signaling servers. Just keep vibecoding.</em>
             </p>
 

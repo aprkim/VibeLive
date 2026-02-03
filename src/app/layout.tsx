@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "VibeLive — Real human connection for vibecoded apps",
   description: "Plug-and-play video chat for vibecoders building in the AI era. A bridge for real human connection.",
   icons: {
-    icon: "/favicon.png",
+    icon: "/VibeLive/favicon-vibelive.png",
   },
 };
 

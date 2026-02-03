@@ -11,7 +11,7 @@ import CTAV2 from "@/components/CTAV2";
 import Footer from "@/components/Footer";
 import AnimatedMap from "@/components/AnimatedMap";
 
-export default function DarkHome() {
+export default function DarkHomeV3() {
   return (
     <div className="dark" style={{ colorScheme: "dark" }}>
       <style>{`

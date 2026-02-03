@@ -9,10 +9,10 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full py-4 px-6 bg-card/95 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-50 w-full py-4 px-6 bg-card/90 backdrop-blur-sm border-b border-border">
       <div className="max-w-[980px] mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <span className="text-text text-[26px] tracking-tight"><span className="font-bold">Vibe</span><span className="font-normal">Live</span></span>
+          <img src="/VibeLive/vibelive-logo.png" alt="VibeLive" className="h-7" />
         </div>
         <nav className="flex items-center gap-8">
           <button

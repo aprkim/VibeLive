@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import HeroV4 from "@/components/HeroV4";
+import HeroV7 from "@/components/HeroV7";
 import ClarityStrip from "@/components/ClarityStrip";
 import BeforeAfter from "@/components/BeforeAfter";
 import HowVibecodersUse from "@/components/HowVibecodersUse";
@@ -11,7 +11,7 @@ import CTAV2 from "@/components/CTAV2";
 import Footer from "@/components/Footer";
 import AnimatedMap from "@/components/AnimatedMap";
 
-export default function DarkHome() {
+export default function DarkHomeV2() {
   return (
     <div className="dark" style={{ colorScheme: "dark" }}>
       <style>{`
@@ -23,7 +23,7 @@ export default function DarkHome() {
       <AnimatedMap />
       <main className="min-h-screen relative z-10">
         <Header />
-        <HeroV4 />
+        <HeroV7 />
         <ClarityStrip />
         <BeforeAfter />
         <HowVibecodersUse />

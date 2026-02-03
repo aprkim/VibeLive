@@ -82,40 +82,25 @@ export default function AnimatedMap() {
 
     function updateLayout() {
       if (!canvas || !dotsContainer) return;
-      const worldMap = canvas.parentElement as HTMLElement;
-      if (!worldMap) return;
-      const mapContainer = worldMap.parentElement as HTMLElement;
+      const mapContainer = canvas.closest(".map-container");
       if (!mapContainer) return;
 
       const vw = mapContainer.clientWidth;
       const vh = mapContainer.clientHeight;
-      const aspectRatio = SVG_W / SVG_H;
 
-      // Cover behavior: map fills viewport in both dimensions
-      let mapWidth: number, mapHeight: number;
-      if (vw >= vh * aspectRatio) {
-        mapWidth = vw;
-        mapHeight = vw / aspectRatio;
-      } else {
-        // Tall screen (mobile) — zoom in wider so fewer dots visible
-        mapHeight = vh * 1.4;
-        mapWidth = mapHeight * aspectRatio;
-      }
-
+      // Each map copy = viewport width (50% of the 200% container)
+      const mapWidth = vw;
+      const mapHeight = mapWidth * (SVG_H / SVG_W);
       const mapY = (vh - mapHeight) / 2;
-      const mapX = (vw - mapWidth) / 2;
 
-      // Set world-map width for two seamless copies
-      worldMap.style.width = (mapWidth * 2) + "px";
-
-      // Canvas covers the full track
-      canvas.width = mapWidth * 2;
+      // Canvas covers the full 200% track
+      canvas.width = vw * 2;
       canvas.height = vh;
 
       // Calculate pixel positions for the first copy
       const positions: { x: number; y: number }[] = [];
       cities.forEach((city) => {
-        const x = mapX + (city.svgX / 100) * mapWidth;
+        const x = (city.svgX / 100) * mapWidth;
         const y = mapY + (city.svgY / 100) * mapHeight;
         positions.push({ x, y });
       });
@@ -124,13 +109,15 @@ export default function AnimatedMap() {
       // Update all dot and video box positions
       dotElementsRef.current.forEach(({ el, copy, cityIdx }) => {
         const pos = positions[cityIdx];
-        el.style.left = (copy * mapWidth + pos.x) + "px";
+        const xOffset = copy * mapWidth;
+        el.style.left = (xOffset + pos.x) + "px";
         el.style.top = pos.y + "px";
       });
 
       videoBoxesRef.current.forEach(({ el, copy, cityIdx }) => {
         const pos = positions[cityIdx];
-        el.style.left = (copy * mapWidth + pos.x) + "px";
+        const xOffset = copy * mapWidth;
+        el.style.left = (xOffset + pos.x) + "px";
         el.style.top = pos.y + "px";
       });
     }
