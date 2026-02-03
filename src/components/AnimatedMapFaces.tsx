@@ -79,6 +79,11 @@ export default function AnimatedMapFaces() {
     const dotsContainer = dotsContainerRef.current;
     const canvas = canvasRef.current;
     if (!dotsContainer || !canvas) return;
+
+    // Skip heavy animation on mobile
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 

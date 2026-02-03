@@ -29,8 +29,8 @@ export default function HeroV4Claude4() {
 
   return (
     <section className="py-20 md:py-32 px-6 relative overflow-hidden">
-      {/* Animated code background */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Animated code background — hidden on mobile for performance */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         <div className="absolute inset-0 flex flex-col justify-center gap-6">
           {rows.map((row, rowIndex) => (
             <div
