@@ -13,7 +13,7 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <a href="/VibeLive/dark"><img src="/VibeLive/vibelive-logo.png" alt="VibeLive" className="h-6" /></a>
               </div>
-              <p className="text-xs text-muted/70">
+              <p className="text-xs text-[rgba(160,255,240,0.20)]">
                 A bridge for real human connection in the AI era.
               </p>
             </div>
@@ -31,7 +31,7 @@ export default function Footer() {
                   Contact
                 </a>
               </div>
-              <p className="text-xs text-muted/50">
+              <p className="text-xs text-[rgba(160,255,240,0.20)]">
                 © 2026 VibeLive. Built for vibecoders.
               </p>
             </div>
