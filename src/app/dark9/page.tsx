@@ -10,7 +10,7 @@ import CTAV2 from "@/components/CTAV2";
 import Footer from "@/components/Footer";
 import AnimatedMapFaces from "@/components/AnimatedMapFaces";
 
-export default function DarkHome() {
+export default function Dark9Home() {
   return (
     <div className="dark bg-[#080808] min-h-screen" style={{ colorScheme: "dark" }}>
       <style>{`

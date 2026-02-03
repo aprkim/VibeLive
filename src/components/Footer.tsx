@@ -21,6 +21,9 @@ export default function Footer() {
             {/* Right: Links + Copyright */}
             <div className="flex flex-col items-start md:items-end gap-2">
               <div className="flex items-center gap-6">
+                <a href="/VibeLive/dark/docs" className="text-sm text-muted hover:text-text transition-colors">
+                  Docs
+                </a>
                 <a href="/VibeLive/dark/privacy" className="text-sm text-muted hover:text-text transition-colors">
                   Privacy
                 </a>

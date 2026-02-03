@@ -1,6 +1,6 @@
 "use client";
 
-export default function HeroV4Claude6() {
+export default function HeroV4Claude7() {
   const codeSnippets = [
     `import VibeLive from '@vibelive/sdk'`,
     `import { VideoRoom } from '@vibelive/react'`,
@@ -175,12 +175,12 @@ export default function HeroV4Claude6() {
         </div>
 
         {/* === MOBILE: Paired cards (pre-join + room together) === */}
-        <div className="md:hidden flex flex-col gap-6 max-w-[980px] mx-auto">
+        <div className="md:hidden flex flex-col gap-6 max-w-[980px] mx-auto opacity-[0.88]">
 
           {/* TabbiMate pair */}
           <div className="flex flex-col gap-2">
             {/* Pre-join */}
-            <div className="card overflow-hidden shadow-lg flex flex-col">
+            <div className="card overflow-hidden shadow-md flex flex-col">
               <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-soft">
                 <div className="flex items-center gap-1">
                   <span className="text-sm font-bold text-[#BF3143]">Tabbi</span>
@@ -210,7 +210,7 @@ export default function HeroV4Claude6() {
                   </div>
                   <span className="text-xs text-muted">2 online</span>
                 </div>
-                <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#BF3143] hover:bg-[#a82a3a] text-white font-medium transition-colors mt-auto">
+                <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#BF3143]/85 hover:bg-[#BF3143] text-white/90 font-medium transition-colors mt-auto">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
@@ -219,7 +219,7 @@ export default function HeroV4Claude6() {
               </div>
             </div>
             {/* Room */}
-            <div className="card overflow-hidden shadow-lg">
+            <div className="card overflow-hidden shadow-md">
               <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-soft">
                 <div className="flex items-center gap-1">
                   <span className="text-sm font-bold text-[#BF3143]">Tabbi</span>
@@ -270,13 +270,13 @@ export default function HeroV4Claude6() {
           {/* TinyRoom pair */}
           <div className="flex flex-col gap-2">
             {/* Pre-join */}
-            <div className="card overflow-hidden shadow-lg flex flex-col">
+            <div className="card overflow-hidden shadow-md flex flex-col">
               <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-soft">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-sm font-bold text-[#22c55e]">Tiny</span>
+                  <span className="text-sm font-bold text-[#556B2F]">Tiny</span>
                   <span className="text-sm font-bold text-text">Room</span>
                 </div>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#22c55e]/15 text-[#22c55e] border border-[#22c55e]/30">LIVE</span>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#556B2F]/15 text-[#556B2F] border border-[#556B2F]/30">LIVE</span>
               </div>
               <div className="p-4 flex flex-col flex-1">
                 <div className="mb-3">
@@ -300,7 +300,7 @@ export default function HeroV4Claude6() {
                   </div>
                   <span className="text-xs text-muted">4 in room</span>
                 </div>
-                <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#22c55e] hover:bg-[#16a34a] text-white font-medium transition-colors mt-auto">
+                <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#556B2F]/85 hover:bg-[#495C28] text-white/90 font-medium transition-colors mt-auto">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
@@ -309,10 +309,10 @@ export default function HeroV4Claude6() {
               </div>
             </div>
             {/* Room */}
-            <div className="card overflow-hidden shadow-lg">
+            <div className="card overflow-hidden shadow-md">
               <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-soft">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-sm font-bold text-[#22c55e]">Tiny</span>
+                  <span className="text-sm font-bold text-[#556B2F]">Tiny</span>
                   <span className="text-sm font-bold text-text">Room</span>
                 </div>
                 <span className="text-[9px] text-muted/60">4 in room</span>
@@ -325,7 +325,7 @@ export default function HeroV4Claude6() {
                         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
                       <div className="absolute bottom-1 right-1.5">
-                        <span className="w-1.5 h-1.5 block rounded-full bg-[#22c55e]"></span>
+                        <span className="w-1.5 h-1.5 block rounded-full bg-[#556B2F]"></span>
                       </div>
                     </div>
                   ))}
@@ -336,7 +336,7 @@ export default function HeroV4Claude6() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                     </svg>
                   </button>
-                  <button className="w-7 h-7 rounded-full bg-[#22c55e] flex items-center justify-center">
+                  <button className="w-7 h-7 rounded-full bg-[#556B2F] flex items-center justify-center">
                     <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z" />
                     </svg>
@@ -354,20 +354,20 @@ export default function HeroV4Claude6() {
           {/* MentorNow pair */}
           <div className="flex flex-col gap-2">
             {/* Pre-join */}
-            <div className="card overflow-hidden shadow-lg flex flex-col">
+            <div className="card overflow-hidden shadow-md flex flex-col">
               <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-soft">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-sm font-bold text-[#8b5cf6]">Mentor</span>
+                  <span className="text-sm font-bold text-[#6E6282]">Mentor</span>
                   <span className="text-sm font-bold text-text">Now</span>
                 </div>
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#8b5cf6]/15 text-[#8b5cf6] border border-[#8b5cf6]/30">1 : 1</span>
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#6E6282]/15 text-[#6E6282] border border-[#6E6282]/30">1 : 1</span>
               </div>
               <div className="p-4 flex flex-col flex-1">
                 <div className="mb-3">
                   <div className="text-[10px] text-muted mb-0.5">Session</div>
                   <div className="text-sm font-medium text-muted flex items-center gap-2">
                     <span>Career Check-in</span>
-                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#8b5cf6]/10 text-[#8b5cf6] border border-[#8b5cf6]/20 font-mono">15:00</span>
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#6E6282]/10 text-[#6E6282] border border-[#6E6282]/20 font-mono">15:00</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-2 mb-4 flex-1">
@@ -376,14 +376,14 @@ export default function HeroV4Claude6() {
                       <img src="https://i.pravatar.cc/150?img=25" alt="Mentee" className="w-full h-full rounded-full object-cover" />
                       <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full border-2 border-card"></span>
                     </div>
-                    <div className="w-7 h-7 rounded-full border-2 border-[#8b5cf6]/50 relative">
+                    <div className="w-7 h-7 rounded-full border-2 border-[#6E6282]/50 relative">
                       <img src="https://i.pravatar.cc/150?img=52" alt="Mentor" className="w-full h-full rounded-full object-cover" />
-                      <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-[#8b5cf6] rounded-full border-2 border-card"></span>
+                      <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-[#6E6282] rounded-full border-2 border-card"></span>
                     </div>
                   </div>
                   <span className="text-xs text-muted">Mentor ready</span>
                 </div>
-                <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-medium transition-colors mt-auto">
+                <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#6E6282]/85 hover:bg-[#585070] text-white/90 font-medium transition-colors mt-auto">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
@@ -392,13 +392,13 @@ export default function HeroV4Claude6() {
               </div>
             </div>
             {/* Room */}
-            <div className="card overflow-hidden shadow-lg">
+            <div className="card overflow-hidden shadow-md">
               <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-soft">
                 <div className="flex items-center gap-1.5">
-                  <span className="text-sm font-bold text-[#8b5cf6]">Mentor</span>
+                  <span className="text-sm font-bold text-[#6E6282]">Mentor</span>
                   <span className="text-sm font-bold text-text">Now</span>
                 </div>
-                <span className="text-[9px] font-mono text-[#8b5cf6]/70">15 min</span>
+                <span className="text-[9px] font-mono text-[#6E6282]/70">15 min</span>
               </div>
               <div className="p-2">
                 <div className="relative rounded-lg aspect-[16/10] bg-[#141414] flex items-center justify-center border border-[#2a2a2a]">
@@ -406,18 +406,18 @@ export default function HeroV4Claude6() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <div className="absolute top-1.5 left-1.5 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 block rounded-full bg-[#8b5cf6] animate-pulse"></span>
-                    <span className="text-[7px] text-[#8b5cf6]/80 font-mono">Screen sharing</span>
+                    <span className="w-1.5 h-1.5 block rounded-full bg-[#6E6282] animate-pulse"></span>
+                    <span className="text-[7px] text-[#6E6282]/80 font-mono">Screen sharing</span>
                   </div>
                   <div className="absolute top-1.5 right-1.5">
                     <span className="text-[8px] bg-black/40 text-white/60 px-1.5 py-0.5 rounded font-mono">11:42</span>
                   </div>
                   <div className="absolute bottom-1.5 right-1.5 flex flex-col gap-1">
-                    <div className="w-[60px] h-[40px] rounded bg-[#1e1e1e] border border-[#8b5cf6]/40 flex items-center justify-center shadow-lg relative">
+                    <div className="w-[60px] h-[40px] rounded bg-[#1e1e1e] border border-[#6E6282]/40 flex items-center justify-center shadow-lg relative">
                       <svg className="w-5 h-5 text-[#3a3a3a]" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                       </svg>
-                      <span className="absolute bottom-0.5 left-1 text-[6px] bg-[#8b5cf6]/70 text-white px-1 py-px rounded">Mentor</span>
+                      <span className="absolute bottom-0.5 left-1 text-[6px] bg-[#6E6282]/70 text-white px-1 py-px rounded">Mentor</span>
                     </div>
                     <div className="w-[60px] h-[40px] rounded bg-[#1e1e1e] border border-[#333] flex items-center justify-center shadow-lg relative">
                       <svg className="w-5 h-5 text-[#3a3a3a]" fill="currentColor" viewBox="0 0 24 24">
@@ -433,13 +433,13 @@ export default function HeroV4Claude6() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                     </svg>
                   </button>
-                  <button className="w-7 h-7 rounded-full bg-[#8b5cf6] flex items-center justify-center">
+                  <button className="w-7 h-7 rounded-full bg-[#6E6282] flex items-center justify-center">
                     <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z" />
                     </svg>
                   </button>
-                  <button className="w-7 h-7 rounded-full bg-[#8b5cf6]/30 flex items-center justify-center border border-[#8b5cf6]/50">
-                    <svg className="w-3.5 h-3.5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <button className="w-7 h-7 rounded-full bg-[#6E6282]/30 flex items-center justify-center border border-[#6E6282]/50">
+                    <svg className="w-3.5 h-3.5 text-[#6E6282]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </button>
@@ -457,10 +457,10 @@ export default function HeroV4Claude6() {
 
         {/* === DESKTOP: Original two-grid layout === */}
         {/* Product Cards (pre-join state) */}
-        <div className="hidden md:grid grid-cols-3 gap-4 max-w-[980px] mx-auto">
+        <div className="hidden md:grid grid-cols-3 gap-4 max-w-[980px] mx-auto opacity-[0.88]">
 
           {/* 1. TabbiMate — Language Practice (Red) */}
-          <div className="card overflow-hidden shadow-lg flex flex-col">
+          <div className="card overflow-hidden shadow-md flex flex-col">
             <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-soft">
               <div className="flex items-center gap-1">
                 <span className="text-sm font-bold text-[#BF3143]">Tabbi</span>
@@ -490,7 +490,7 @@ export default function HeroV4Claude6() {
                 </div>
                 <span className="text-xs text-muted">2 online</span>
               </div>
-              <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#BF3143] hover:bg-[#a82a3a] text-white font-medium transition-colors mt-auto">
+              <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#BF3143]/85 hover:bg-[#BF3143] text-white/90 font-medium transition-colors mt-auto">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
@@ -500,13 +500,13 @@ export default function HeroV4Claude6() {
           </div>
 
           {/* 2. TinyRoom — Group Video Chat (Green) */}
-          <div className="card overflow-hidden shadow-lg flex flex-col">
+          <div className="card overflow-hidden shadow-md flex flex-col">
             <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-soft">
               <div className="flex items-center gap-1.5">
-                <span className="text-sm font-bold text-[#22c55e]">Tiny</span>
+                <span className="text-sm font-bold text-[#556B2F]">Tiny</span>
                 <span className="text-sm font-bold text-text">Room</span>
               </div>
-              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#22c55e]/15 text-[#22c55e] border border-[#22c55e]/30">LIVE</span>
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#556B2F]/15 text-[#556B2F] border border-[#556B2F]/30">LIVE</span>
             </div>
             <div className="p-4 flex flex-col flex-1">
               <div className="mb-3">
@@ -530,7 +530,7 @@ export default function HeroV4Claude6() {
                 </div>
                 <span className="text-xs text-muted">4 in room</span>
               </div>
-              <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#22c55e] hover:bg-[#16a34a] text-white font-medium transition-colors mt-auto">
+              <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#556B2F]/85 hover:bg-[#495C28] text-white/90 font-medium transition-colors mt-auto">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
@@ -540,20 +540,20 @@ export default function HeroV4Claude6() {
           </div>
 
           {/* 3. MentorNow — 1:1 Mentoring (Purple) */}
-          <div className="card overflow-hidden shadow-lg flex flex-col">
+          <div className="card overflow-hidden shadow-md flex flex-col">
             <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-soft">
               <div className="flex items-center gap-1.5">
-                <span className="text-sm font-bold text-[#8b5cf6]">Mentor</span>
+                <span className="text-sm font-bold text-[#6E6282]">Mentor</span>
                 <span className="text-sm font-bold text-text">Now</span>
               </div>
-              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#8b5cf6]/15 text-[#8b5cf6] border border-[#8b5cf6]/30">1 : 1</span>
+              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#6E6282]/15 text-[#6E6282] border border-[#6E6282]/30">1 : 1</span>
             </div>
             <div className="p-4 flex flex-col flex-1">
               <div className="mb-3">
                 <div className="text-[10px] text-muted mb-0.5">Session</div>
                 <div className="text-sm font-medium text-muted flex items-center gap-2">
                   <span>Career Check-in</span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#8b5cf6]/10 text-[#8b5cf6] border border-[#8b5cf6]/20 font-mono">15:00</span>
+                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#6E6282]/10 text-[#6E6282] border border-[#6E6282]/20 font-mono">15:00</span>
                 </div>
               </div>
               <div className="flex items-center gap-2 mb-4 flex-1">
@@ -562,14 +562,14 @@ export default function HeroV4Claude6() {
                     <img src="https://i.pravatar.cc/150?img=25" alt="Mentee" className="w-full h-full rounded-full object-cover" />
                     <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-emerald-400 rounded-full border-2 border-card"></span>
                   </div>
-                  <div className="w-7 h-7 rounded-full border-2 border-[#8b5cf6]/50 relative">
+                  <div className="w-7 h-7 rounded-full border-2 border-[#6E6282]/50 relative">
                     <img src="https://i.pravatar.cc/150?img=52" alt="Mentor" className="w-full h-full rounded-full object-cover" />
-                    <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-[#8b5cf6] rounded-full border-2 border-card"></span>
+                    <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 bg-[#6E6282] rounded-full border-2 border-card"></span>
                   </div>
                 </div>
                 <span className="text-xs text-muted">Mentor ready</span>
               </div>
-              <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#8b5cf6] hover:bg-[#7c3aed] text-white font-medium transition-colors mt-auto">
+              <button className="w-full py-2.5 text-sm flex items-center justify-center gap-2 rounded-[10px] bg-[#6E6282]/85 hover:bg-[#585070] text-white/90 font-medium transition-colors mt-auto">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
@@ -581,10 +581,10 @@ export default function HeroV4Claude6() {
         </div>
 
         {/* Three Live Video Cards (room samples) — desktop only */}
-        <div className="hidden md:grid grid-cols-3 gap-4 max-w-[980px] mx-auto mt-4">
+        <div className="hidden md:grid grid-cols-3 gap-4 max-w-[980px] mx-auto mt-4 opacity-[0.88]">
 
           {/* 1. TabbiMate — 1:1 Language Practice (Red) */}
-          <div className="card overflow-hidden shadow-lg">
+          <div className="card overflow-hidden shadow-md">
             <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-soft">
               <div className="flex items-center gap-1">
                 <span className="text-sm font-bold text-[#BF3143]">Tabbi</span>
@@ -632,10 +632,10 @@ export default function HeroV4Claude6() {
           </div>
 
           {/* 2. TinyRoom — Group Video (Green) */}
-          <div className="card overflow-hidden shadow-lg">
+          <div className="card overflow-hidden shadow-md">
             <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-soft">
               <div className="flex items-center gap-1.5">
-                <span className="text-sm font-bold text-[#22c55e]">Tiny</span>
+                <span className="text-sm font-bold text-[#556B2F]">Tiny</span>
                 <span className="text-sm font-bold text-text">Room</span>
               </div>
               <span className="text-[9px] text-muted/60">4 in room</span>
@@ -648,7 +648,7 @@ export default function HeroV4Claude6() {
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                     </svg>
                     <div className="absolute bottom-1 right-1.5">
-                      <span className="w-1.5 h-1.5 block rounded-full bg-[#22c55e]"></span>
+                      <span className="w-1.5 h-1.5 block rounded-full bg-[#556B2F]"></span>
                     </div>
                   </div>
                 ))}
@@ -659,7 +659,7 @@ export default function HeroV4Claude6() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                   </svg>
                 </button>
-                <button className="w-7 h-7 rounded-full bg-[#22c55e] flex items-center justify-center">
+                <button className="w-7 h-7 rounded-full bg-[#556B2F] flex items-center justify-center">
                   <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z" />
                   </svg>
@@ -674,13 +674,13 @@ export default function HeroV4Claude6() {
           </div>
 
           {/* 3. MentorNow — 1:1 Mentoring with Screen Share (Purple) */}
-          <div className="card overflow-hidden shadow-lg">
+          <div className="card overflow-hidden shadow-md">
             <div className="flex items-center justify-between px-4 py-2.5 border-b border-border bg-soft">
               <div className="flex items-center gap-1.5">
-                <span className="text-sm font-bold text-[#8b5cf6]">Mentor</span>
+                <span className="text-sm font-bold text-[#6E6282]">Mentor</span>
                 <span className="text-sm font-bold text-text">Now</span>
               </div>
-              <span className="text-[9px] font-mono text-[#8b5cf6]/70">15 min</span>
+              <span className="text-[9px] font-mono text-[#6E6282]/70">15 min</span>
             </div>
             <div className="p-2">
               <div className="relative rounded-lg aspect-[16/10] bg-[#141414] flex items-center justify-center border border-[#2a2a2a]">
@@ -688,18 +688,18 @@ export default function HeroV4Claude6() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <div className="absolute top-1.5 left-1.5 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 block rounded-full bg-[#8b5cf6] animate-pulse"></span>
-                  <span className="text-[7px] text-[#8b5cf6]/80 font-mono">Screen sharing</span>
+                  <span className="w-1.5 h-1.5 block rounded-full bg-[#6E6282] animate-pulse"></span>
+                  <span className="text-[7px] text-[#6E6282]/80 font-mono">Screen sharing</span>
                 </div>
                 <div className="absolute top-1.5 right-1.5">
                   <span className="text-[8px] bg-black/40 text-white/60 px-1.5 py-0.5 rounded font-mono">11:42</span>
                 </div>
                 <div className="absolute bottom-1.5 right-1.5 flex flex-col gap-1">
-                  <div className="w-[60px] h-[40px] rounded bg-[#1e1e1e] border border-[#8b5cf6]/40 flex items-center justify-center shadow-lg relative">
+                  <div className="w-[60px] h-[40px] rounded bg-[#1e1e1e] border border-[#6E6282]/40 flex items-center justify-center shadow-lg relative">
                     <svg className="w-5 h-5 text-[#3a3a3a]" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                     </svg>
-                    <span className="absolute bottom-0.5 left-1 text-[6px] bg-[#8b5cf6]/70 text-white px-1 py-px rounded">Mentor</span>
+                    <span className="absolute bottom-0.5 left-1 text-[6px] bg-[#6E6282]/70 text-white px-1 py-px rounded">Mentor</span>
                   </div>
                   <div className="w-[60px] h-[40px] rounded bg-[#1e1e1e] border border-[#333] flex items-center justify-center shadow-lg relative">
                     <svg className="w-5 h-5 text-[#3a3a3a]" fill="currentColor" viewBox="0 0 24 24">
@@ -715,13 +715,13 @@ export default function HeroV4Claude6() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                   </svg>
                 </button>
-                <button className="w-7 h-7 rounded-full bg-[#8b5cf6] flex items-center justify-center">
+                <button className="w-7 h-7 rounded-full bg-[#6E6282] flex items-center justify-center">
                   <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z" />
                   </svg>
                 </button>
-                <button className="w-7 h-7 rounded-full bg-[#8b5cf6]/30 flex items-center justify-center border border-[#8b5cf6]/50">
-                  <svg className="w-3.5 h-3.5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button className="w-7 h-7 rounded-full bg-[#6E6282]/30 flex items-center justify-center border border-[#6E6282]/50">
+                  <svg className="w-3.5 h-3.5 text-[#6E6282]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </button>
