@@ -325,14 +325,14 @@ body {
   }
   .world-map::before {
     width: 100%;
-    background-image: url('/map.svg');
+    background-image: url('/VibeLive/map.svg');
     background-size: 100% auto;
     background-position: center center;
     opacity: 0.04;
   }
   .world-map::after {
     width: 100%;
-    background-image: url('/map.svg');
+    background-image: url('/VibeLive/map.svg');
     background-size: 100% auto;
     background-position: center center;
     opacity: 0.15;
@@ -358,7 +358,7 @@ body {
   left: 0;
   width: 200%;
   height: 100%;
-  background-image: url('/map.svg'), url('/map.svg');
+  background-image: url('/VibeLive/map.svg'), url('/VibeLive/map.svg');
   background-size: 50% auto, 50% auto;
   background-position: 0 center, 100% center;
   background-repeat: no-repeat;
@@ -375,7 +375,7 @@ body {
   left: 0;
   width: 200%;
   height: 100%;
-  background-image: url('/map.svg'), url('/map.svg');
+  background-image: url('/VibeLive/map.svg'), url('/VibeLive/map.svg');
   background-size: 50% auto, 50% auto;
   background-position: 0 center, 100% center;
   background-repeat: no-repeat;

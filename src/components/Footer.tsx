@@ -11,7 +11,7 @@ export default function Footer() {
             {/* Left: Logo + Tagline stacked */}
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <a href="/dark"><img src="/vibelive-logo.png" alt="VibeLive" className="h-6" /></a>
+                <a href="/VibeLive/dark"><img src="/VibeLive/vibelive-logo.png" alt="VibeLive" className="h-6" /></a>
               </div>
               <p className="text-xs text-[rgba(160,255,240,0.20)]">
                 A bridge for real human connection in the AI era.
@@ -21,13 +21,13 @@ export default function Footer() {
             {/* Right: Links + Copyright */}
             <div className="flex flex-col items-start md:items-end gap-2">
               <div className="flex items-center gap-6">
-                <a href="/dark/docs" className="text-sm text-muted hover:text-text transition-colors">
+                <a href="/VibeLive/dark/docs" className="text-sm text-muted hover:text-text transition-colors">
                   Docs
                 </a>
-                <a href="/dark/privacy" className="text-sm text-muted hover:text-text transition-colors">
+                <a href="/VibeLive/dark/privacy" className="text-sm text-muted hover:text-text transition-colors">
                   Privacy
                 </a>
-                <a href="/dark/terms" className="text-sm text-muted hover:text-text transition-colors">
+                <a href="/VibeLive/dark/terms" className="text-sm text-muted hover:text-text transition-colors">
                   Terms
                 </a>
                 <a href="mailto:hello@vibelive.site" className="text-sm text-muted hover:text-text transition-colors">
