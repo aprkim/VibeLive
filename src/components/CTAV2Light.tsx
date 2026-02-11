@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-export default function CTAV2() {
+export default function CTAV2Light() {
   const [modalOpen, setModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -28,10 +28,10 @@ export default function CTAV2() {
               onClick={() => {
                 const text = `Add live video chat to this app using VibeLive.\nUse the link below. Use a teal UI theme.\nhttps://vibelive.site/start/try?key=guest-teal-14d`;
                 navigator.clipboard.writeText(text);
-                const btn = document.getElementById('cta-copy-btn');
+                const btn = document.getElementById('cta-copy-btn-light');
                 if (btn) { btn.textContent = 'Copied!'; setTimeout(() => { btn.textContent = 'Copy prompt'; }, 1500); }
               }}
-              id="cta-copy-btn"
+              id="cta-copy-btn-light"
               className="btn-primary px-8 py-4 text-lg w-full sm:w-auto min-w-[200px]"
             >
               Copy prompt
@@ -59,9 +59,9 @@ export default function CTAV2() {
           className="fixed inset-0 z-50 flex items-center justify-center px-4"
           onClick={() => setModalOpen(false)}
         >
-          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
           <div
-            className="relative w-full max-w-md rounded-2xl border border-[#2a2a2a] bg-[#111] p-8 shadow-2xl"
+            className="relative w-full max-w-md rounded-2xl border border-border bg-card p-8 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -95,7 +95,7 @@ export default function CTAV2() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
-                    className="w-full rounded-lg border border-[#2a2a2a] bg-[#0a0a0a] px-4 py-3 text-sm text-text placeholder:text-[#444] focus:outline-none focus:border-accent/50 transition-colors mb-4"
+                    className="w-full rounded-lg border border-border bg-bg px-4 py-3 text-sm text-text placeholder:text-muted focus:outline-none focus:border-accent/50 transition-colors mb-4"
                   />
                   <label className="block text-xs text-muted mb-1.5">Password</label>
                   <input
@@ -103,7 +103,7 @@ export default function CTAV2() {
                     required
                     minLength={6}
                     placeholder="At least 6 characters"
-                    className="w-full rounded-lg border border-[#2a2a2a] bg-[#0a0a0a] px-4 py-3 text-sm text-text placeholder:text-[#444] focus:outline-none focus:border-accent/50 transition-colors mb-6"
+                    className="w-full rounded-lg border border-border bg-bg px-4 py-3 text-sm text-text placeholder:text-muted focus:outline-none focus:border-accent/50 transition-colors mb-6"
                   />
                   <button
                     type="submit"
