@@ -1,6 +1,6 @@
 "use client";
 
-import Header from "@/components/Header";
+import HeaderDocs from "@/components/HeaderDocs";
 import Footer from "@/components/Footer";
 
 export default function DocsPage() {
@@ -11,7 +11,7 @@ export default function DocsPage() {
         .dark .bg-card\\/90 { background-color: rgba(11, 26, 26, 0.95) !important; }
       `}</style>
       <main className="min-h-screen bg-[#060606] relative z-10">
-        <Header />
+        <HeaderDocs />
         <div className="max-w-[700px] mx-auto px-6 pt-16 pb-24">
 
           {/* Page title */}
@@ -38,7 +38,7 @@ export default function DocsPage() {
               {/* Copy button — desktop */}
               <button
                 onClick={() => {
-                  const text = `Add live video chat to this app using VibeLive.\nUse the link below. Use a teal UI theme.\nhttps://vibelive.site/start/try?key=guest-teal-14d`;
+                  const text = `Add live video chat to this app using VibeLive.\n\nProject ID:  p_8f3k29d2\nProject Key: k_92kd83jf39dk\n\nUse this integration guide:\nhttps://vibelive.site/start/try`;
                   navigator.clipboard.writeText(text);
                   const btn = document.getElementById('docs-copy-btn');
                   if (btn) {
@@ -70,13 +70,19 @@ export default function DocsPage() {
                     className="select-none shrink-0 font-mono"
                     style={{ color: 'rgba(160, 255, 240, 0.9)', fontWeight: 600, fontSize: '15px' }}
                   >&#10095;</span>
-                  <p className="font-mono" style={{ fontSize: '15px', lineHeight: 1.55, color: 'rgba(230, 255, 250, 0.9)', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
-                    Add live video chat to this app using VibeLive.
-                    <br />
-                    Use the link below. Use a <span className="font-bold" style={{ color: '#fff' }}>teal UI theme</span>.
-                    <br />
-                    <span style={{ color: 'rgba(91, 159, 199, 0.7)', fontSize: '14px' }}>https://vibelive.site/start/try?key=guest-teal-14d</span>
-                  </p>
+                  <div className="font-mono" style={{ fontSize: '15px', lineHeight: 1.55, color: 'rgba(230, 255, 250, 0.9)', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
+                    <p style={{ marginBottom: '12px' }}>Add live video chat to this app using VibeLive.</p>
+                    <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '2px' }}>
+                      <span style={{ display: 'inline-block', minWidth: '100px' }}>Project ID:</span>
+                      <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>p_8f3k29d2</span>
+                    </p>
+                    <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '12px' }}>
+                      <span style={{ display: 'inline-block', minWidth: '100px' }}>Project Key:</span>
+                      <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>k_92kd83jf39dk</span>
+                    </p>
+                    <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '2px' }}>Use this integration guide:</p>
+                    <p><span style={{ color: 'rgba(91, 159, 199, 0.65)', fontSize: '14px' }}>https://vibelive.site/start/try</span></p>
+                  </div>
                 </div>
               </div>
               {/* Copy button — mobile */}
@@ -85,7 +91,7 @@ export default function DocsPage() {
                 <div className="flex justify-end">
                   <button
                     onClick={() => {
-                      const text = `Add live video chat to this app using VibeLive.\nUse the link below. Use a teal UI theme.\nhttps://vibelive.site/start/try?key=guest-teal-14d`;
+                      const text = `Add live video chat to this app using VibeLive.\n\nProject ID:  p_8f3k29d2\nProject Key: k_92kd83jf39dk\n\nUse this integration guide:\nhttps://vibelive.site/start/try`;
                       navigator.clipboard.writeText(text);
                       const btn = document.getElementById('docs-copy-btn-mobile');
                       if (btn) {

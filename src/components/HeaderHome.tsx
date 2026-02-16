@@ -5,7 +5,7 @@ export default function HeaderHome() {
     <header className="sticky top-0 z-50 w-full py-4 px-6 bg-card/90 backdrop-blur-sm border-b border-border">
       <div className="max-w-[980px] mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <a href="https://vibelive.site"><img src="/vibelive-logo.png" alt="VibeLive" className="h-7" /></a>
+          <a href="https://home.vibelive.site/"><img src="/vibelive-logo.png" alt="VibeLive" className="h-7" /></a>
         </div>
         <nav className="flex items-center gap-6">
           <a
