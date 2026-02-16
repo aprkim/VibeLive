@@ -3,6 +3,7 @@
 import { useState } from "react";
 import HeaderDocs from "@/components/HeaderDocs";
 import Footer from "@/components/Footer";
+import CTAV2 from "@/components/CTAV2";
 
 export default function DocsPage() {
   const [generated, setGenerated] = useState(false);
@@ -290,6 +291,7 @@ export default function DocsPage() {
           </section>
 
         </div>
+        <CTAV2 />
         <Footer />
       </main>
     </div>
