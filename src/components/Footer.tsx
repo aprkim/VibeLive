@@ -1,25 +1,27 @@
 export default function Footer() {
   const linkClass =
-    "text-[13px] font-medium text-[rgba(255,255,255,0.72)] hover:text-[#0EA5A4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#060606] rounded-sm";
+    "text-[13px] font-medium text-[rgba(255,255,255,0.8)] hover:text-[#0EA5A4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#060606] rounded-sm";
 
   const iconClass =
-    "flex items-center justify-center w-9 h-9 rounded-full text-[rgba(255,255,255,0.4)] hover:text-[#0EA5A4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#060606]";
+    "flex items-center justify-center w-9 h-9 rounded-full text-[rgba(255,255,255,0.5)] hover:text-[#0EA5A4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#060606]";
 
   return (
     <footer className="bg-[#060606]">
-      <div className="px-6 pt-7 pb-5">
+      <div className="px-6 pt-5 pb-4">
         <div className="max-w-[980px] mx-auto">
 
           {/* Row 1: Logo | Nav links */}
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <a href="/" className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 rounded-sm">
-              <img src="/vibelive-logo.png" alt="VibeLive" className="h-[18px]" />
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+            <a href="https://vibelive.site" className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 rounded-sm">
+              <img src="/vibelive-logo.png" alt="VibeLive" className="h-4" />
             </a>
 
             <nav className="flex flex-wrap items-center gap-6">
-              <a href="/docs" className={linkClass}>Docs</a>
-              <a href="/privacy" className={linkClass}>Privacy</a>
-              <a href="/terms" className={linkClass}>Terms</a>
+              <a href="https://vibelive.site" className={linkClass}>Home</a>
+              <a href="https://vibelive.site/docs" className={linkClass}>Docs</a>
+              <a href="https://vibelive.site/blog" className={linkClass}>Blog</a>
+              <a href="https://vibelive.site/privacy" className={linkClass}>Privacy</a>
+              <a href="https://vibelive.site/terms" className={linkClass}>Terms</a>
               <a href="mailto:hello@vibelive.site" className={linkClass}>Contact</a>
             </nav>
           </div>
@@ -27,7 +29,7 @@ export default function Footer() {
           <div className="border-t border-[rgba(255,255,255,0.1)] mt-3 mb-1" />
 
           {/* Row 2: Copyright | Social icons */}
-          <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-3">
             <p className="text-[13px] text-[rgba(255,255,255,0.6)]">
               &copy; 2026 VibeLive.
             </p>

@@ -9,7 +9,7 @@ export default function HeaderLight() {
         </div>
         <nav className="flex items-center gap-8">
           <a
-            href="/dark/docs"
+            href="/docs"
             className="hidden sm:block text-muted hover:text-text transition-colors text-sm font-medium"
           >
             Docs

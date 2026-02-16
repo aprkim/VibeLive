@@ -3,10 +3,31 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "VibeLive — Real human connection for vibecoded apps",
-  description: "Plug-and-play video chat for vibecoders building in the AI era. A bridge for real human connection.",
+  title: "Built with VibeLive — Showcase",
+  description: "Real vibecoded apps powered by live human connection. See what builders are creating with VibeLive.",
   icons: {
     icon: "/favicon-vibelive.png",
+  },
+  openGraph: {
+    title: "Built with VibeLive — Showcase",
+    description: "Real vibecoded apps powered by live human connection. See what builders are creating with VibeLive.",
+    url: "https://built.vibelive.site",
+    siteName: "VibeLive",
+    images: [
+      {
+        url: "https://vibelive.site/social/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Built with VibeLive — Showcase",
+    description: "Real vibecoded apps powered by live human connection. See what builders are creating with VibeLive.",
+    images: ["https://vibelive.site/social/og-image.png"],
+    site: "@vibelivehq",
   },
 };
 

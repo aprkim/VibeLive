@@ -6,9 +6,11 @@ export default function CTAV2() {
   const [modalOpen, setModalOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    const handler = () => { setModalOpen(true); setSubmitted(false); setEmail(""); };
+    const handler = () => { setModalOpen(true); setSubmitted(false); setEmail(""); setError(""); };
     window.addEventListener('open-get-access', handler);
     return () => window.removeEventListener('open-get-access', handler);
   }, []);
@@ -77,15 +79,33 @@ export default function CTAV2() {
             {!submitted ? (
               <>
                 <h3 className="text-xl font-bold text-text mb-2">
-                  Get your VibeLive access
+                  Get early access
                 </h3>
                 <p className="text-sm text-muted mb-6">
-                  Create an account to get your own private key and keep using VibeLive after the trial.
+                  Enter your email and we&#39;ll send you access details and your API key.
                 </p>
                 <form
-                  onSubmit={(e) => {
+                  onSubmit={async (e) => {
                     e.preventDefault();
-                    if (email.trim()) setSubmitted(true);
+                    if (!email.trim()) return;
+                    setSubmitting(true);
+                    setError("");
+                    try {
+                      const res = await fetch("https://formspree.io/f/mzdadakz", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ email }),
+                      });
+                      if (res.ok) {
+                        setSubmitted(true);
+                      } else {
+                        setError("Something went wrong. Please try again.");
+                      }
+                    } catch {
+                      setError("Something went wrong. Please try again.");
+                    } finally {
+                      setSubmitting(false);
+                    }
                   }}
                 >
                   <label className="block text-xs text-muted mb-1.5">Email</label>
@@ -95,21 +115,17 @@ export default function CTAV2() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
-                    className="w-full rounded-lg border border-[#2a2a2a] bg-[#0a0a0a] px-4 py-3 text-sm text-text placeholder:text-[#444] focus:outline-none focus:border-accent/50 transition-colors mb-4"
-                  />
-                  <label className="block text-xs text-muted mb-1.5">Password</label>
-                  <input
-                    type="password"
-                    required
-                    minLength={6}
-                    placeholder="At least 6 characters"
                     className="w-full rounded-lg border border-[#2a2a2a] bg-[#0a0a0a] px-4 py-3 text-sm text-text placeholder:text-[#444] focus:outline-none focus:border-accent/50 transition-colors mb-6"
                   />
+                  {error && (
+                    <p className="text-sm text-red-400 mb-4">{error}</p>
+                  )}
                   <button
                     type="submit"
-                    className="btn-primary w-full py-3 text-base"
+                    disabled={submitting}
+                    className="btn-primary w-full py-3 text-base disabled:opacity-50"
                   >
-                    Create account
+                    {submitting ? "Submitting..." : "Request access"}
                   </button>
                 </form>
               </>
@@ -121,13 +137,13 @@ export default function CTAV2() {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-text mb-2">
-                  You&apos;re in!
+                  You&apos;re on the list!
                 </h3>
                 <p className="text-sm text-muted mb-4">
-                  Your private API key has been sent to <span className="text-text font-medium">{email}</span>.
+                  We&#39;ll send access details to <span className="text-text font-medium">{email}</span>.
                 </p>
                 <p className="text-xs text-muted">
-                  Check your inbox to get started.
+                  You&#39;ll hear from us within 24 hours.
                 </p>
               </div>
             )}

@@ -1,19 +1,19 @@
 export default function FooterLight() {
   const linkClass =
-    "text-[13px] font-medium text-gray-500 hover:text-[#0EA5A4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-sm";
+    "text-[13px] font-medium text-gray-600 hover:text-[#0EA5A4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-sm";
 
   const iconClass =
-    "flex items-center justify-center w-9 h-9 rounded-full text-gray-400 hover:text-[#0EA5A4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
+    "flex items-center justify-center w-9 h-9 rounded-full text-gray-500 hover:text-[#0EA5A4] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white";
 
   return (
     <footer className="bg-white">
-      <div className="px-6 pt-7 pb-5">
+      <div className="px-6 pt-5 pb-4">
         <div className="max-w-[980px] mx-auto">
 
           {/* Row 1: Logo | Nav links */}
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
             <a href="/light" className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0EA5A4]/40 rounded-sm">
-              <img src="/vibelive-logo-w.png" alt="VibeLive" className="h-[18px]" />
+              <img src="/vibelive-logo-w.png" alt="VibeLive" className="h-4" />
             </a>
 
             <nav className="flex flex-wrap items-center gap-6">
@@ -27,7 +27,7 @@ export default function FooterLight() {
           <div className="border-t border-gray-200 mt-3 mb-1" />
 
           {/* Row 2: Copyright | Social icons */}
-          <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-3">
             <p className="text-[13px] text-gray-400">
               &copy; 2026 VibeLive.
             </p>
