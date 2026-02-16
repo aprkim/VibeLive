@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import HeaderDocs from "@/components/HeaderDocs";
 import Footer from "@/components/Footer";
 
 export default function DocsPage() {
+  const [generated, setGenerated] = useState(false);
   return (
     <div className="dark" style={{ colorScheme: "dark" }}>
       <style>{`
@@ -24,7 +26,7 @@ export default function DocsPage() {
           <section className="mb-14">
             <h2 className="text-lg font-semibold text-text mb-4">Quick Start</h2>
             <p className="text-sm text-muted mb-4">
-              Copy this prompt and paste it into your AI coding assistant (Claude Code, Cursor, Windsurf, etc.).
+              Generate a key, then paste the prompt into your AI editor (Claude Code, Cursor, Windsurf, etc.).
             </p>
             <div
               className="relative overflow-hidden"
@@ -35,35 +37,37 @@ export default function DocsPage() {
                 boxShadow: '0 0 0 1px rgba(160, 255, 240, 0.10), 0 14px 32px rgba(0, 0, 0, 0.65)',
               }}
             >
-              {/* Copy button — desktop */}
-              <button
-                onClick={() => {
-                  const text = `Add live video chat to this app using VibeLive.\n\nProject ID:  p_8f3k29d2\nProject Key: k_92kd83jf39dk\n\nUse this integration guide:\nhttps://vibelive.site/start/try`;
-                  navigator.clipboard.writeText(text);
-                  const btn = document.getElementById('docs-copy-btn');
-                  if (btn) {
-                    btn.textContent = 'Copied \u2713';
-                    setTimeout(() => { btn.textContent = 'Copy'; }, 1200);
-                  }
-                }}
-                id="docs-copy-btn"
-                className="hidden md:flex absolute top-5 right-5 text-[11px] font-mono z-10 transition-colors"
-                style={{
-                  color: '#A0FFF0',
-                  background: 'rgba(160, 255, 240, 0.14)',
-                  border: '1px solid rgba(160, 255, 240, 0.35)',
-                  borderRadius: '6px',
-                  padding: '8px 12px',
-                  minWidth: '88px',
-                  minHeight: '36px',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(160, 255, 240, 0.2)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(160, 255, 240, 0.14)'; }}
-              >
-                Copy
-              </button>
+              {/* Copy button — only shown after generate */}
+              {generated && (
+                <button
+                  onClick={() => {
+                    const text = `Add live video chat to this app using VibeLive.\n\nProject ID:  p_8f3k29d2\nProject Key: k_92kd83jf39dk\n\nUse this integration guide:\nhttps://vibelive.site/start/try`;
+                    navigator.clipboard.writeText(text);
+                    const btn = document.getElementById('docs-copy-btn');
+                    if (btn) {
+                      btn.textContent = 'Copied \u2713';
+                      setTimeout(() => { btn.textContent = 'Copy'; }, 1200);
+                    }
+                  }}
+                  id="docs-copy-btn"
+                  className="hidden md:flex absolute top-5 right-5 text-[11px] font-mono z-10 transition-colors"
+                  style={{
+                    color: '#A0FFF0',
+                    background: 'rgba(160, 255, 240, 0.14)',
+                    border: '1px solid rgba(160, 255, 240, 0.35)',
+                    borderRadius: '6px',
+                    padding: '8px 12px',
+                    minWidth: '88px',
+                    minHeight: '36px',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(160, 255, 240, 0.2)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(160, 255, 240, 0.14)'; }}
+                >
+                  Copy
+                </button>
+              )}
               <div className="px-4 py-4 md:px-7 md:py-6 md:pr-28">
                 <div className="flex items-start gap-3">
                   <span
@@ -71,58 +75,87 @@ export default function DocsPage() {
                     style={{ color: 'rgba(160, 255, 240, 0.9)', fontWeight: 600, fontSize: '15px' }}
                   >&#10095;</span>
                   <div className="font-mono" style={{ fontSize: '15px', lineHeight: 1.55, color: 'rgba(230, 255, 250, 0.9)', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
-                    <p style={{ marginBottom: '12px' }}>Add live video chat to this app using VibeLive.</p>
-                    <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '2px' }}>
-                      <span style={{ display: 'inline-block', minWidth: '100px' }}>Project ID:</span>
-                      <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>p_8f3k29d2</span>
-                    </p>
-                    <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '12px' }}>
-                      <span style={{ display: 'inline-block', minWidth: '100px' }}>Project Key:</span>
-                      <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>k_92kd83jf39dk</span>
-                    </p>
-                    <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '2px' }}>Use this integration guide:</p>
-                    <p><span style={{ color: 'rgba(91, 159, 199, 0.65)', fontSize: '14px' }}>https://vibelive.site/start/try</span></p>
+                    <p style={{ marginBottom: generated ? '12px' : '0' }}>Add live video chat to this app using VibeLive.</p>
+                    {generated && (
+                      <>
+                        <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '2px' }}>
+                          <span style={{ display: 'inline-block', minWidth: '100px' }}>Project ID:</span>
+                          <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>p_8f3k29d2</span>
+                        </p>
+                        <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '12px' }}>
+                          <span style={{ display: 'inline-block', minWidth: '100px' }}>Project Key:</span>
+                          <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>k_92kd83jf39dk</span>
+                        </p>
+                        <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '2px' }}>Use this integration guide:</p>
+                        <p><span style={{ color: 'rgba(91, 159, 199, 0.65)', fontSize: '14px' }}>https://vibelive.site/start/try</span></p>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
-              {/* Copy button — mobile */}
-              <div className="md:hidden px-4 pb-4">
-                <div style={{ height: '1px', background: 'rgba(160, 255, 240, 0.12)', marginBottom: '12px' }} />
-                <div className="flex justify-end">
-                  <button
-                    onClick={() => {
-                      const text = `Add live video chat to this app using VibeLive.\n\nProject ID:  p_8f3k29d2\nProject Key: k_92kd83jf39dk\n\nUse this integration guide:\nhttps://vibelive.site/start/try`;
-                      navigator.clipboard.writeText(text);
-                      const btn = document.getElementById('docs-copy-btn-mobile');
-                      if (btn) {
-                        btn.textContent = 'Copied \u2713';
-                        setTimeout(() => { btn.textContent = 'Copy'; }, 1200);
-                      }
-                    }}
-                    id="docs-copy-btn-mobile"
-                    className="text-[11px] font-mono transition-colors"
-                    style={{
-                      color: '#A0FFF0',
-                      background: 'rgba(160, 255, 240, 0.14)',
-                      border: '1px solid rgba(160, 255, 240, 0.35)',
-                      borderRadius: '6px',
-                      padding: '8px 12px',
-                      minWidth: '88px',
-                      minHeight: '36px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                    onTouchStart={(e) => { e.currentTarget.style.background = 'rgba(160, 255, 240, 0.22)'; }}
-                    onTouchEnd={(e) => { e.currentTarget.style.background = 'rgba(160, 255, 240, 0.14)'; }}
-                  >
-                    Copy
-                  </button>
+              {/* Generate Key button — before generate */}
+              {!generated && (
+                <div className="px-4 pb-4 md:px-7 md:pb-6">
+                  <div style={{ height: '1px', background: 'rgba(160, 255, 240, 0.08)', marginBottom: '16px' }} />
+                  <div className="flex justify-end">
+                    <button
+                      onClick={() => setGenerated(true)}
+                      className="font-semibold transition-colors"
+                      style={{
+                        color: '#fff',
+                        background: '#0EA5A4',
+                        borderRadius: '10px',
+                        padding: '10px 28px',
+                        fontSize: '14px',
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.background = '#10b5b4'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.background = '#0EA5A4'; }}
+                    >
+                      Generate Key
+                    </button>
+                  </div>
                 </div>
-              </div>
+              )}
+              {/* Copy button — mobile, after generate */}
+              {generated && (
+                <div className="md:hidden px-4 pb-4">
+                  <div style={{ height: '1px', background: 'rgba(160, 255, 240, 0.12)', marginBottom: '12px' }} />
+                  <div className="flex justify-end">
+                    <button
+                      onClick={() => {
+                        const text = `Add live video chat to this app using VibeLive.\n\nProject ID:  p_8f3k29d2\nProject Key: k_92kd83jf39dk\n\nUse this integration guide:\nhttps://vibelive.site/start/try`;
+                        navigator.clipboard.writeText(text);
+                        const btn = document.getElementById('docs-copy-btn-mobile');
+                        if (btn) {
+                          btn.textContent = 'Copied \u2713';
+                          setTimeout(() => { btn.textContent = 'Copy'; }, 1200);
+                        }
+                      }}
+                      id="docs-copy-btn-mobile"
+                      className="text-[11px] font-mono transition-colors"
+                      style={{
+                        color: '#A0FFF0',
+                        background: 'rgba(160, 255, 240, 0.14)',
+                        border: '1px solid rgba(160, 255, 240, 0.35)',
+                        borderRadius: '6px',
+                        padding: '8px 12px',
+                        minWidth: '88px',
+                        minHeight: '36px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                      onTouchStart={(e) => { e.currentTarget.style.background = 'rgba(160, 255, 240, 0.22)'; }}
+                      onTouchEnd={(e) => { e.currentTarget.style.background = 'rgba(160, 255, 240, 0.14)'; }}
+                    >
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
             <p className="text-xs text-muted mt-3">
-              That&#39;s the entire integration step. Your AI assistant handles the rest &mdash; importing the SDK, creating rooms, and rendering the video UI.
+              That&#39;s it. Your AI editor handles the setup and video integration.
             </p>
           </section>
 
