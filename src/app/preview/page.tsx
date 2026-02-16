@@ -6,7 +6,7 @@ import WhatYouCanBuild from "@/components/WhatYouCanBuild";
 import FounderStory from "@/components/FounderStory";
 import CTAV2 from "@/components/CTAV2";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import HeaderHome from "@/components/HeaderHome";
 import AnimatedMapFaces from "@/components/AnimatedMapFaces";
 
 export default function PreviewPage() {
@@ -24,7 +24,7 @@ export default function PreviewPage() {
       `}</style>
       <AnimatedMapFaces />
       <main className="min-h-screen relative z-10">
-        <Header />
+        <HeaderHome />
         <HeroV4Claude7V2 />
         <ClarityStrip />
         <div className="dark9-steps-bg">
