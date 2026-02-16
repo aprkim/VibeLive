@@ -9,17 +9,17 @@ export default function HeaderHome() {
         </div>
         <nav className="flex items-center gap-6">
           <a
-            href="https://vibelive.site/docs"
+            href="https://docs.vibelive.site/"
             className="hidden sm:block text-muted hover:text-text transition-colors text-sm font-medium"
           >
             Docs
           </a>
-          <a
-            href="https://vibelive.site/start/try"
-            className="text-xs font-medium px-4 py-1.5 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+          <button
+            onClick={() => window.dispatchEvent(new Event('open-get-access'))}
+            className="text-xs font-medium px-4 py-1.5 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors cursor-pointer"
           >
             Get Access
-          </a>
+          </button>
         </nav>
       </div>
     </header>
