@@ -89,7 +89,7 @@ export default function PricingPage() {
             {/* Pro — Builder */}
             <div className="rounded-2xl border border-accent/20 bg-[#0c0c0c] p-8 flex flex-col relative">
               <div className="mb-6">
-                <span className="inline-block text-xs font-medium text-accent uppercase tracking-wider mb-3">Builder</span>
+                <span className="inline-block text-xs font-medium text-accent uppercase tracking-wider mb-3">Builder Pro</span>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-3xl font-bold text-text">$10</span>
                   <span className="text-sm text-muted">/ month</span>

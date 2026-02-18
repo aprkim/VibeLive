@@ -18,7 +18,7 @@ export default function Footer() {
 
             <nav className="flex flex-wrap items-center gap-6">
               <a href="https://vibelive.site" className={linkClass}>Home</a>
-              <a href="https://vibelive.site/docs" className={linkClass}>Docs</a>
+              <a href="https://docs.vibelive.site/" className={linkClass}>Docs</a>
               <a href="https://vibelive.site/blog" className={linkClass}>Blog</a>
               <a href="https://vibelive.site/privacy" className={linkClass}>Privacy</a>
               <a href="https://vibelive.site/terms" className={linkClass}>Terms</a>
