@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 
+const WORKER_URL = 'https://vibelive-auth-proxy.aprkim.workers.dev';
+
 export default function CTAV2() {
   const [modalOpen, setModalOpen] = useState(false);
   const [email, setEmail] = useState("");
@@ -28,7 +30,7 @@ export default function CTAV2() {
           <div className="flex flex-col items-center gap-1.5 w-full sm:w-auto">
             <button
               onClick={() => {
-                const text = `Add live video chat to this app using VibeLive.\nUse the link below. Use a teal UI theme.\nhttps://vibelive.site/start/try?key=guest-teal-14d`;
+                const text = `Implement real-time video chat using VibeLive.\n\nUse this integration guide:\nhttps://docs.vibelive.site/Integration_Guide.md`;
                 navigator.clipboard.writeText(text);
                 const btn = document.getElementById('cta-copy-btn');
                 if (btn) { btn.textContent = 'Copied!'; setTimeout(() => { btn.textContent = 'Copy prompt'; }, 1500); }
@@ -91,15 +93,20 @@ export default function CTAV2() {
                     setSubmitting(true);
                     setError("");
                     try {
-                      const res = await fetch("https://formspree.io/f/mzdadakz", {
+                      const res = await fetch(WORKER_URL, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ email }),
+                        body: JSON.stringify({
+                          action: "createAccount",
+                          email: email.trim(),
+                          onConfirmUrl: "https://home.vibelive.site/landing-project-key.html",
+                        }),
                       });
                       if (res.ok) {
                         setSubmitted(true);
                       } else {
-                        setError("Something went wrong. Please try again.");
+                        const data = await res.json().catch(() => ({}));
+                        setError(data.error || "Something went wrong. Please try again.");
                       }
                     } catch {
                       setError("Something went wrong. Please try again.");
