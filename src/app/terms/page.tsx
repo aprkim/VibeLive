@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-
 export default function Terms() {
   return (
     <div className="dark" style={{ colorScheme: "dark" }}>
@@ -16,221 +15,283 @@ export default function Terms() {
             <h1 className="text-[1.75rem] font-bold text-text tracking-tight mb-2">
               Terms of Service
             </h1>
-            <p className="text-[13px] text-muted">Last Updated: February 2026</p>
-          </div>
-
-          {/* Intro */}
-          <div className="mb-10 text-[15px] leading-[1.75] text-[rgba(230,241,242,0.65)] space-y-3">
-            <p>
-              These Terms of Service (&ldquo;Terms&rdquo;) govern access to and
-              use of VibeLive (the &ldquo;Service&rdquo;), a product operated by
-              Tabbi AI, Inc., a Delaware corporation (&ldquo;VibeLive,&rdquo;
-              &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;).
-            </p>
-            <p>
-              By accessing or using the Service, you agree to these Terms. If you
-              do not agree, do not use the Service.
+            <p className="text-[13px] text-muted">
+              Version 2.0 &middot; Operated by Makedo Inc. (California
+              C-Corporation)
             </p>
           </div>
 
           {/* Sections */}
           <div className="space-y-10">
-            <Section id="description" num={1} title="Description of Service">
+            <Section id="acceptance" num={1} title="Acceptance of Terms">
               <p>
-                VibeLive provides real-time video and audio communication
-                infrastructure designed for developers and builders to embed live
-                video functionality into their applications.
+                These Terms of Service (&ldquo;Terms&rdquo;) govern access to
+                and use of VibeLive (the &ldquo;Service&rdquo;), operated by
+                Makedo Inc., a California corporation (&ldquo;VibeLive,&rdquo;
+                &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;).
+              </p>
+              <p>
+                By accessing or using the Service, you agree to be bound by
+                these Terms. If you do not agree, do not use the Service.
+              </p>
+              <p>
+                If you use the Service on behalf of an entity, you represent
+                that you have authority to bind that entity.
+              </p>
+            </Section>
+
+            <Section id="description" num={2} title="Description of Service">
+              <p>
+                VibeLive provides real-time video, audio, and communication
+                infrastructure designed for developers and builders to embed
+                live functionality into their own applications.
               </p>
               <p>The Service may include:</p>
               <BulletList
                 items={[
                   "Real-time video and audio transmission",
                   "Screen sharing capabilities",
-                  "Room creation and access via link or code",
-                  "Optional client-side recording capabilities",
-                  "Storage of limited session metadata",
+                  "Room/session creation",
+                  "API and SDK integrations",
+                  "Optional transcription functionality",
+                  "Limited session metadata storage",
+                  "Beta or experimental features",
                 ]}
               />
               <p>
-                Recording functionality, if enabled, is performed locally within
-                the participant&rsquo;s browser or application environment.
-                VibeLive does not store or retain video or audio recordings.
-              </p>
-              <p>
-                VibeLive does not provide social networking services, content
-                hosting, or content moderation.
+                VibeLive is a technology infrastructure provider and does not
+                operate a social network, content hosting platform, or
+                moderation service.
               </p>
             </Section>
 
-            <Section id="eligibility" num={2} title="Eligibility">
+            <Section id="eligibility" num={3} title="Eligibility">
+              <p>You must be at least 13 years old to use the Service.</p>
+              <p>The Service is not directed to children under 13.</p>
               <p>
-                You must be at least 13 years old to use the Service.
-              </p>
-              <p>
-                If you use VibeLive on behalf of a company or organization, you
-                represent that you have authority to bind that entity to these
-                Terms.
+                Developers are solely responsible for compliance with applicable
+                child privacy laws, including COPPA and similar international
+                laws.
               </p>
             </Section>
 
-            <Section id="accounts" num={3} title="Accounts and Access">
-              <p>VibeLive may allow:</p>
+            <Section id="accounts" num={4} title="Accounts and Access">
+              <p>The Service may permit:</p>
               <BulletList
                 items={[
                   "Account-based access",
-                  "Guest participation without account creation",
+                  "Guest participation",
+                  "API key or project key access",
                 ]}
               />
               <p>
                 You are responsible for maintaining the confidentiality of your
-                credentials and access keys.
+                credentials and API keys.
+              </p>
+              <p>
+                You are responsible for all activity occurring under your
+                credentials.
               </p>
             </Section>
 
             <Section
               id="developer-responsibility"
-              num={4}
+              num={5}
               title="Developer Responsibility"
             >
-              <p>
-                VibeLive is a neutral technology infrastructure provider.
-              </p>
+              <p>VibeLive is a neutral infrastructure provider.</p>
               <p>You are solely responsible for:</p>
               <BulletList
                 items={[
-                  "The applications you build using VibeLive",
-                  "All content transmitted through your implementation",
-                  "Any recordings generated through your implementation",
-                  "Your end users",
-                  "Compliance with applicable laws and regulations",
-                  "Obtaining any legally required consents, including consent for recording or transcription",
+                  "Applications you build using the Service",
+                  "Content transmitted through your implementation",
+                  "Obtaining legally required user consents",
+                  "Recording consent compliance (including two-party consent laws such as California)",
+                  "Compliance with privacy, data protection, and consumer protection laws",
+                  "Your end users and their conduct",
                 ]}
               />
               <p>
-                VibeLive does not monitor, control, store, or moderate
-                communications transmitted using the Service.
+                VibeLive does not monitor, moderate, or control communications
+                transmitted through developer implementations and has no
+                obligation to do so.
               </p>
             </Section>
 
-            <Section id="acceptable-use" num={5} title="Acceptable Use">
+            <Section
+              id="recording"
+              num={6}
+              title="Recording and Transcription"
+            >
+              <p>Unless explicitly stated otherwise:</p>
+              <BulletList
+                items={[
+                  "VibeLive does not store video or audio recordings.",
+                  "Any recording functionality is controlled by developers and/or occurs within end-user environments.",
+                  "Developers are solely responsible for obtaining legally required consent before enabling recording or transcription.",
+                ]}
+              />
+              <p>If transcription features are enabled:</p>
+              <BulletList
+                items={[
+                  "Transcriptions may be processed using third-party AI providers.",
+                  "Developers are responsible for notifying end users of such processing.",
+                  "VibeLive may store transcription data as described in the Privacy Policy.",
+                ]}
+              />
+              <p>
+                VibeLive assumes no liability for unauthorized or unlawful
+                recording conducted by developers or end users.
+              </p>
+            </Section>
+
+            <Section id="data" num={7} title="Data and Metadata">
+              <p>
+                VibeLive may store limited session metadata, including:
+              </p>
+              <BulletList
+                items={[
+                  "Room identifiers",
+                  "Timestamps",
+                  "Participant counts",
+                  "Technical diagnostics",
+                ]}
+              />
+              <p>
+                We do not store media content unless explicitly disclosed.
+              </p>
+            </Section>
+
+            <Section id="acceptable-use" num={8} title="Acceptable Use">
               <p>You agree not to use the Service to:</p>
               <BulletList
                 items={[
                   "Violate any law or regulation",
-                  "Transmit unlawful, harmful, abusive, or infringing content",
-                  "Interfere with network integrity or security",
-                  "Attempt unauthorized access to systems",
-                  "Reverse engineer or misuse the Service",
+                  "Transmit unlawful, abusive, infringing, or harmful content",
+                  "Interfere with system integrity",
+                  "Attempt unauthorized access",
+                  "Reverse engineer or exploit the Service",
                 ]}
               />
               <p>
-                We may suspend or terminate access if we determine misuse.
+                We may suspend or terminate access for violations or suspected
+                abuse.
               </p>
             </Section>
 
-            <Section id="data" num={6} title="Data and Storage">
-              <p>VibeLive does not store:</p>
+            <Section
+              id="api-limits"
+              num={9}
+              title="API Limits and Plan Enforcement"
+            >
+              <p>We may:</p>
               <BulletList
                 items={[
-                  "Video recordings",
-                  "Audio recordings",
-                  "Client-side recordings generated through developer applications",
+                  "Enforce usage limits",
+                  "Rate limit traffic",
+                  "Throttle bandwidth",
+                  "Suspend accounts exceeding plan limits",
+                  "Modify or discontinue plan features",
                 ]}
               />
-              <p>
-                Recording functionality, if enabled, occurs locally in the
-                user&rsquo;s browser or application and is controlled by the
-                developer.
-              </p>
-              <p>VibeLive may store:</p>
+              <p>Free or trial plans may have usage restrictions.</p>
+            </Section>
+
+            <Section
+              id="beta"
+              num={10}
+              title="Beta and Experimental Features"
+            >
+              <p>We may offer beta or experimental features.</p>
+              <p>Such features:</p>
               <BulletList
                 items={[
-                  "Limited session metadata (such as room ID, timestamps, and participant counts)",
-                  "Transcriptions when explicitly requested or enabled",
+                  "May be modified or discontinued at any time",
+                  "May be unstable",
+                  "Are provided without warranties",
                 ]}
               />
-              <p>
-                Developers are responsible for storage, management, and deletion
-                of any recordings created through their applications.
-              </p>
             </Section>
 
-            <Section id="payments" num={7} title="Payments and Billing">
+            <Section id="payments" num={11} title="Payments and Billing">
               <p>
-                Paid plans are billed via Stripe on a recurring monthly basis.
+                Paid plans are billed via third-party payment processors (e.g.,
+                Stripe).
               </p>
-              <p>
-                All fees are non-refundable unless required by law. We may:
-              </p>
+              <p>Fees are:</p>
               <BulletList
                 items={[
-                  "Suspend access for non-payment",
-                  "Modify pricing with reasonable notice",
-                  "Modify plan features",
+                  "Recurring unless canceled",
+                  "Non-refundable unless required by law",
                 ]}
               />
-              <p>Taxes are your responsibility unless otherwise stated.</p>
+              <p>We may suspend access for non-payment.</p>
+              <p>You are responsible for applicable taxes.</p>
             </Section>
 
-            <Section id="ip" num={8} title="Intellectual Property">
+            <Section
+              id="third-party"
+              num={12}
+              title="Third-Party Services"
+            >
               <p>
-                All rights, title, and interest in the Service remain with Tabbi
-                AI, Inc.
+                The Service may rely on third-party providers, including cloud
+                hosting, AI services, or payment processors.
               </p>
               <p>
-                These Terms do not grant you ownership of the Service or
-                underlying technology.
-              </p>
-              <p>
-                You retain ownership of content transmitted through your
-                implementation.
+                We are not responsible for third-party service performance.
               </p>
             </Section>
 
-            <Section id="privacy" num={9} title="Privacy">
+            <Section id="privacy" num={13} title="Privacy">
               <p>
-                Our{" "}
+                Use of the Service is subject to our{" "}
                 <a
                   href="/privacy"
                   className="text-accent hover:text-accent/80 transition-colors"
                 >
                   Privacy Policy
-                </a>{" "}
-                explains how we collect and use information.
+                </a>
+                .
               </p>
-              <p>
-                By using the Service, you agree to our Privacy Policy.
-              </p>
+              <p>By using the Service, you agree to that policy.</p>
             </Section>
 
-            <Section id="disclaimers" num={10} title="Disclaimers">
+            <Section
+              id="disclaimers"
+              num={14}
+              title="Disclaimer of Warranties"
+            >
               <p>
                 The Service is provided &ldquo;AS IS&rdquo; and &ldquo;AS
                 AVAILABLE.&rdquo;
               </p>
-              <p>We do not guarantee:</p>
+              <p>
+                We disclaim all warranties, express or implied, including:
+              </p>
               <BulletList
                 items={[
-                  "Continuous availability",
-                  "Error-free operation",
-                  "Compatibility with all environments",
+                  "Merchantability",
+                  "Fitness for a particular purpose",
+                  "Non-infringement",
+                  "Uninterrupted availability",
                 ]}
               />
-              <p>
-                We disclaim all warranties to the fullest extent permitted by law.
-              </p>
             </Section>
 
-            <Section id="liability" num={11} title="Limitation of Liability">
+            <Section
+              id="liability"
+              num={15}
+              title="Limitation of Liability"
+            >
               <p>To the maximum extent permitted by law:</p>
               <p>
-                VibeLive&rsquo;s total liability arising out of or relating to the
-                Service shall not exceed the lesser of:
+                VibeLive&rsquo;s total liability shall not exceed the lesser of:
               </p>
               <BulletList
                 items={[
                   "$100 USD; or",
-                  "The amount paid by you to VibeLive in the preceding 12 months.",
+                  "The amount paid by you in the preceding 12 months.",
                 ]}
               />
               <p>
@@ -239,55 +300,124 @@ export default function Terms() {
               </p>
             </Section>
 
-            <Section id="indemnification" num={12} title="Indemnification">
+            <Section id="indemnification" num={16} title="Indemnification">
               <p>
-                You agree to indemnify and hold harmless Tabbi AI, Inc. from
-                claims arising out of:
+                You agree to indemnify and hold harmless Makedo Inc. from claims
+                arising out of:
               </p>
               <BulletList
                 items={[
                   "Your use of the Service",
                   "Your applications",
                   "Your end users",
-                  "Your violation of these Terms",
+                  "Your violation of law",
+                  "Recording or consent violations",
                 ]}
               />
             </Section>
 
-            <Section id="termination" num={13} title="Termination">
+            <Section
+              id="arbitration"
+              num={17}
+              title="Arbitration and Dispute Resolution"
+            >
+              <h3 className="text-[15px] font-semibold text-text mt-4 mb-2">
+                Informal Resolution
+              </h3>
               <p>
-                We may suspend or terminate access at our discretion, including
-                for violation of these Terms.
+                Before filing a claim, parties agree to attempt informal
+                resolution for 30 days.
               </p>
-              <p>You may stop using the Service at any time.</p>
+
+              <h3 className="text-[15px] font-semibold text-text mt-4 mb-2">
+                Binding Arbitration
+              </h3>
+              <p>
+                Any dispute arising from these Terms shall be resolved by
+                binding arbitration administered by the American Arbitration
+                Association under its Commercial Arbitration Rules.
+              </p>
+              <p>Arbitration shall take place in California.</p>
+
+              <h3 className="text-[15px] font-semibold text-text mt-4 mb-2">
+                Class Action Waiver
+              </h3>
+              <p>
+                Disputes must be brought on an individual basis. Class actions
+                and representative actions are waived.
+              </p>
+
+              <h3 className="text-[15px] font-semibold text-text mt-4 mb-2">
+                Jury Trial Waiver
+              </h3>
+              <p>You waive any right to a jury trial.</p>
+
+              <h3 className="text-[15px] font-semibold text-text mt-4 mb-2">
+                Small Claims
+              </h3>
+              <p>
+                Either party may bring individual claims in small claims court.
+              </p>
             </Section>
 
-            <Section id="governing-law" num={14} title="Governing Law">
+            <Section id="termination" num={18} title="Termination">
               <p>
-                These Terms are governed by the laws of the State of Delaware,
+                We may suspend or terminate access at any time for violation or
+                risk.
+              </p>
+              <p>You may stop using the Service at any time.</p>
+              <p>
+                Provisions that by nature should survive termination shall
+                survive.
+              </p>
+            </Section>
+
+            <Section
+              id="export-compliance"
+              num={19}
+              title="Export Compliance"
+            >
+              <p>
+                You agree not to use the Service in violation of U.S. export
+                control or sanctions laws.
+              </p>
+            </Section>
+
+            <Section id="force-majeure" num={20} title="Force Majeure">
+              <p>
+                We are not liable for delays caused by events beyond our
+                reasonable control.
+              </p>
+            </Section>
+
+            <Section id="assignment" num={21} title="Assignment">
+              <p>
+                We may assign these Terms without restriction. You may not
+                assign without consent.
+              </p>
+            </Section>
+
+            <Section id="governing-law" num={22} title="Governing Law">
+              <p>
+                These Terms are governed by the laws of the State of California,
                 without regard to conflict of law principles.
               </p>
             </Section>
 
-            <Section id="changes" num={15} title="Changes to Terms">
-              <p>
-                We may update these Terms from time to time.
-              </p>
-              <p>
-                Continued use of the Service after changes means you accept the
-                updated Terms.
-              </p>
+            <Section id="changes" num={23} title="Changes to Terms">
+              <p>We may update these Terms.</p>
+              <p>Continued use constitutes acceptance.</p>
             </Section>
 
             <section id="contact">
               <h2 className="text-base font-semibold text-text mb-3 pt-4 flex items-baseline gap-2">
                 <span className="text-[13px] font-medium text-accent tabular-nums">
-                  16.
+                  24.
                 </span>
                 Contact
               </h2>
               <div className="p-5 bg-[#0c0c0c] border border-white/[0.08] rounded-lg text-[15px] text-[rgba(230,241,242,0.65)]">
-                <p className="mb-1">Tabbi AI, Inc.</p>
+                <p className="mb-1">Makedo Inc.</p>
                 <p>
                   <a
                     href="mailto:hello@vibelive.site"
