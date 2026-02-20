@@ -31,7 +31,7 @@ export default function Footer() {
           {/* Row 2: Copyright | Social icons */}
           <div className="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-3">
             <p className="text-[13px] text-[rgba(255,255,255,0.6)]">
-              &copy; 2026 VibeLive.
+              &copy; 2026 VibeLive &middot; Built by Makedo Inc
             </p>
 
             <div className="flex items-center gap-1">
