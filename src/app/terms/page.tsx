@@ -420,10 +420,10 @@ export default function Terms() {
                 <p className="mb-1">Makedo Inc</p>
                 <p>
                   <a
-                    href="mailto:hello@vibelive.site"
+                    href="mailto:contact@makedo.com"
                     className="text-accent hover:text-accent/80 transition-colors"
                   >
-                    hello@vibelive.site
+                    contact@makedo.com
                   </a>
                 </p>
               </div>

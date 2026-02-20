@@ -243,10 +243,10 @@ export default function Privacy() {
               <p>
                 To submit a request, contact:{" "}
                 <a
-                  href="mailto:hello@vibelive.site"
+                  href="mailto:contact@makedo.com"
                   className="text-accent hover:text-accent/80 transition-colors"
                 >
-                  hello@vibelive.site
+                  contact@makedo.com
                 </a>
               </p>
 
@@ -291,10 +291,10 @@ export default function Privacy() {
                 <p>
                   Email:{" "}
                   <a
-                    href="mailto:hello@vibelive.site"
+                    href="mailto:contact@makedo.com"
                     className="text-accent hover:text-accent/80 transition-colors"
                   >
-                    hello@vibelive.site
+                    contact@makedo.com
                   </a>
                 </p>
               </div>
