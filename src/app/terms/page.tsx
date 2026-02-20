@@ -15,10 +15,7 @@ export default function Terms() {
             <h1 className="text-[1.75rem] font-bold text-text tracking-tight mb-2">
               Terms of Service
             </h1>
-            <p className="text-[13px] text-muted">
-              Version 2.0 &middot; Operated by Makedo Inc (California
-              C-Corporation)
-            </p>
+            <p className="text-[13px] text-muted">Last Updated: February 20, 2026</p>
           </div>
 
           {/* Sections */}
