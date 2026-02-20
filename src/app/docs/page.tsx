@@ -5,8 +5,38 @@ import HeaderDocs from "@/components/HeaderDocs";
 import Footer from "@/components/Footer";
 import CTAV2 from "@/components/CTAV2";
 
+const WORKER_URL = 'https://vibelive-auth-proxy.aprkim.workers.dev';
+
 export default function DocsPage() {
   const [generated, setGenerated] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [projectId, setProjectId] = useState("");
+  const [projectKey, setProjectKey] = useState("");
+
+  const handleGenerate = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'createTrialProject' }),
+      });
+      const data = await res.json();
+      if (res.ok && data.projectId) {
+        setProjectId(data.projectId);
+        setProjectKey(data.projectAuthToken);
+        setGenerated(true);
+      } else {
+        setError(data.error || 'Failed to generate key');
+      }
+    } catch {
+      setError('Network error — please try again');
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="dark" style={{ colorScheme: "dark" }}>
       <style>{`
@@ -42,7 +72,7 @@ export default function DocsPage() {
               {generated && (
                 <button
                   onClick={() => {
-                    const text = `Add live video chat to this app using VibeLive.\n\nProject ID:  p_8f3k29d2\nProject Key: k_92kd83jf39dk\n\nUse this integration guide:\nhttps://vibelive.site/start/try`;
+                    const text = `Implement real-time video chat using VibeLive.\n\nProject ID:  ${projectId}\nProject Key: ${projectKey}\n\nUse this integration guide:\nhttps://docs.vibelive.site/Integration_Guide.md`;
                     navigator.clipboard.writeText(text);
                     const btn = document.getElementById('docs-copy-btn');
                     if (btn) {
@@ -76,19 +106,19 @@ export default function DocsPage() {
                     style={{ color: 'rgba(160, 255, 240, 0.9)', fontWeight: 600, fontSize: '15px' }}
                   >&#10095;</span>
                   <div className="font-mono" style={{ fontSize: '15px', lineHeight: 1.55, color: 'rgba(230, 255, 250, 0.9)', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
-                    <p style={{ marginBottom: generated ? '12px' : '0' }}>Add live video chat to this app using VibeLive.</p>
+                    <p style={{ marginBottom: generated ? '12px' : '0' }}>Implement real-time video chat using VibeLive.</p>
                     {generated && (
                       <>
                         <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '2px' }}>
                           <span style={{ display: 'inline-block', minWidth: '100px' }}>Project ID:</span>
-                          <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>p_8f3k29d2</span>
+                          <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>{projectId}</span>
                         </p>
                         <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '12px' }}>
                           <span style={{ display: 'inline-block', minWidth: '100px' }}>Project Key:</span>
-                          <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>k_92kd83jf39dk</span>
+                          <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>{projectKey}</span>
                         </p>
                         <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '2px' }}>Use this integration guide:</p>
-                        <p><span style={{ color: 'rgba(91, 159, 199, 0.65)', fontSize: '14px' }}>https://vibelive.site/start/try</span></p>
+                        <p><span style={{ color: 'rgba(91, 159, 199, 0.65)', fontSize: '14px' }}>https://docs.vibelive.site/Integration_Guide.md</span></p>
                       </>
                     )}
                   </div>
@@ -98,22 +128,28 @@ export default function DocsPage() {
               {!generated && (
                 <div className="px-4 pb-4 md:px-7 md:pb-6">
                   <div style={{ height: '1px', background: 'rgba(160, 255, 240, 0.08)', marginBottom: '16px' }} />
-                  <div className="flex justify-end">
+                  <div className="flex flex-col items-end gap-2">
                     <button
-                      onClick={() => setGenerated(true)}
+                      onClick={handleGenerate}
+                      disabled={loading}
                       className="font-semibold transition-colors"
                       style={{
                         color: '#fff',
-                        background: '#0EA5A4',
+                        background: loading ? '#0d8a89' : '#0EA5A4',
                         borderRadius: '10px',
                         padding: '10px 28px',
                         fontSize: '14px',
+                        cursor: loading ? 'wait' : 'pointer',
+                        opacity: loading ? 0.8 : 1,
                       }}
-                      onMouseEnter={(e) => { e.currentTarget.style.background = '#10b5b4'; }}
-                      onMouseLeave={(e) => { e.currentTarget.style.background = '#0EA5A4'; }}
+                      onMouseEnter={(e) => { if (!loading) e.currentTarget.style.background = '#10b5b4'; }}
+                      onMouseLeave={(e) => { if (!loading) e.currentTarget.style.background = '#0EA5A4'; }}
                     >
-                      Generate Key
+                      {loading ? 'Generating...' : 'Generate Key'}
                     </button>
+                    {error && (
+                      <span className="text-[12px] font-mono" style={{ color: '#fca5a5' }}>{error}</span>
+                    )}
                   </div>
                 </div>
               )}
@@ -124,7 +160,7 @@ export default function DocsPage() {
                   <div className="flex justify-end">
                     <button
                       onClick={() => {
-                        const text = `Add live video chat to this app using VibeLive.\n\nProject ID:  p_8f3k29d2\nProject Key: k_92kd83jf39dk\n\nUse this integration guide:\nhttps://vibelive.site/start/try`;
+                        const text = `Implement real-time video chat using VibeLive.\n\nProject ID:  ${projectId}\nProject Key: ${projectKey}\n\nUse this integration guide:\nhttps://docs.vibelive.site/Integration_Guide.md`;
                         navigator.clipboard.writeText(text);
                         const btn = document.getElementById('docs-copy-btn-mobile');
                         if (btn) {

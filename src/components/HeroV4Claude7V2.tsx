@@ -2,14 +2,41 @@
 
 import { useState, useCallback } from "react";
 
+const WORKER_URL = 'https://vibelive-auth-proxy.aprkim.workers.dev';
+
 export default function HeroV4Claude7V2() {
   const [generated, setGenerated] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+  const [projectId, setProjectId] = useState("");
+  const [projectKey, setProjectKey] = useState("");
 
-  const PROJECT_ID = "p_8f3k29d2";
-  const PROJECT_KEY = "k_92kd83jf39dk";
+  const integrationPrompt = `Implement real-time video chat using VibeLive.\n\nProject ID:  ${projectId}\nProject Key: ${projectKey}\n\nUse this integration guide:\nhttps://docs.vibelive.site/Integration_Guide.md`;
 
-  const integrationPrompt = `Add live video chat to this app using VibeLive.\n\nProject ID:  ${PROJECT_ID}\nProject Key: ${PROJECT_KEY}\n\nUse this integration guide:\nhttps://vibelive.site/start/try`;
+  const handleGenerate = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'createTrialProject' }),
+      });
+      const data = await res.json();
+      if (res.ok && data.projectId) {
+        setProjectId(data.projectId);
+        setProjectKey(data.projectAuthToken);
+        setGenerated(true);
+      } else {
+        setError(data.error || 'Failed to generate key');
+      }
+    } catch {
+      setError('Network error — please try again');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   const handleCopy = useCallback(async () => {
     try {
@@ -146,7 +173,7 @@ export default function HeroV4Claude7V2() {
                   style={{ color: 'rgba(160, 255, 240, 0.9)', fontWeight: 600, fontSize: '15px' }}
                 >&#x276F;</span>
                 <p className="font-mono" style={{ fontSize: '15px', lineHeight: 1.55, color: 'rgba(230, 255, 250, 0.9)', overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
-                  Add live video chat to this app using VibeLive.
+                  Implement real-time video chat using VibeLive.
                   {!generated && (
                     <span
                       className="inline-block align-middle ml-1"
@@ -185,10 +212,10 @@ export default function HeroV4Claude7V2() {
                 >
                   <p style={{ fontSize: '14px', lineHeight: 1.8 }}>
                     <span style={{ color: 'rgba(230, 255, 250, 0.50)' }}>Project ID:{' '}</span>
-                    <span style={{ color: '#b8fff2', fontWeight: 500, letterSpacing: '0.3px' }}>&nbsp;{PROJECT_ID}</span>
+                    <span style={{ color: '#b8fff2', fontWeight: 500, letterSpacing: '0.3px' }}>&nbsp;{projectId}</span>
                     <br />
                     <span style={{ color: 'rgba(230, 255, 250, 0.50)' }}>Project Key:{' '}</span>
-                    <span style={{ color: '#b8fff2', fontWeight: 500, letterSpacing: '0.3px' }}>{PROJECT_KEY}</span>
+                    <span style={{ color: '#b8fff2', fontWeight: 500, letterSpacing: '0.3px' }}>{projectKey}</span>
                   </p>
                 </div>
                 {/* Integration guide — secondary */}
@@ -197,13 +224,13 @@ export default function HeroV4Claude7V2() {
                     Use this integration guide:
                   </p>
                   <a
-                    href="https://vibelive.site/start/try"
+                    href="https://docs.vibelive.site/Integration_Guide.md"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-mono hover:underline"
                     style={{ fontSize: '13px', color: 'rgba(91, 159, 199, 0.65)', lineHeight: 1.55 }}
                   >
-                    https://vibelive.site/start/try
+                    https://docs.vibelive.site/Integration_Guide.md
                   </a>
                 </div>
               </div>
@@ -212,30 +239,41 @@ export default function HeroV4Claude7V2() {
               <div style={{ height: '1px', background: 'rgba(160, 255, 240, 0.06)', marginTop: '20px' }} />
               <div className="flex justify-end" style={{ paddingTop: '16px', paddingBottom: '2px' }}>
                 {!generated ? (
-                  <button
-                    onClick={() => setGenerated(true)}
-                    type="button"
-                    aria-label="Generate a project key"
-                    className="relative z-30 text-[13px] font-mono font-semibold transition-all duration-200 text-white rounded-[8px]"
-                    style={{
-                      background: '#0EA5A4',
-                      width: '196px',
-                      padding: '11px 0',
-                      cursor: 'pointer',
-                      textAlign: 'center',
-                      boxShadow: '0 0 12px rgba(14, 165, 164, 0.25), 0 1px 3px rgba(0, 0, 0, 0.3)',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#12b8b7';
-                      e.currentTarget.style.boxShadow = '0 0 18px rgba(14, 165, 164, 0.35), 0 1px 3px rgba(0, 0, 0, 0.3)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = '#0EA5A4';
-                      e.currentTarget.style.boxShadow = '0 0 12px rgba(14, 165, 164, 0.25), 0 1px 3px rgba(0, 0, 0, 0.3)';
-                    }}
-                  >
-                    Generate Key
-                  </button>
+                  <div className="flex flex-col items-end gap-2">
+                    <button
+                      onClick={handleGenerate}
+                      disabled={loading}
+                      type="button"
+                      aria-label="Generate a project key"
+                      className="relative z-30 text-[13px] font-mono font-semibold transition-all duration-200 text-white rounded-[8px]"
+                      style={{
+                        background: loading ? '#0d8a89' : '#0EA5A4',
+                        width: '196px',
+                        padding: '11px 0',
+                        cursor: loading ? 'wait' : 'pointer',
+                        textAlign: 'center',
+                        boxShadow: '0 0 12px rgba(14, 165, 164, 0.25), 0 1px 3px rgba(0, 0, 0, 0.3)',
+                        opacity: loading ? 0.8 : 1,
+                      }}
+                      onMouseEnter={(e) => {
+                        if (!loading) {
+                          e.currentTarget.style.background = '#12b8b7';
+                          e.currentTarget.style.boxShadow = '0 0 18px rgba(14, 165, 164, 0.35), 0 1px 3px rgba(0, 0, 0, 0.3)';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (!loading) {
+                          e.currentTarget.style.background = '#0EA5A4';
+                          e.currentTarget.style.boxShadow = '0 0 12px rgba(14, 165, 164, 0.25), 0 1px 3px rgba(0, 0, 0, 0.3)';
+                        }
+                      }}
+                    >
+                      {loading ? 'Generating...' : 'Generate Key'}
+                    </button>
+                    {error && (
+                      <span className="text-[12px] font-mono" style={{ color: '#fca5a5' }}>{error}</span>
+                    )}
+                  </div>
                 ) : (
                   <button
                     onClick={handleCopy}

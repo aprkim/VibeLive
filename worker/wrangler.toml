@@ -1,0 +1,7 @@
+name = "vibelive-auth-proxy"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# After deploying, set the secret:
+#   npx wrangler secret put VIBELIVE_AUTH_TOKEN
+# Then paste: mdo_aj39kenuop209ndyaooajeyxks26339019927367kwyFFuwomcHqOIgT67jausool108665e7771humsortABC
