@@ -99,7 +99,7 @@ export default function CTAV2() {
                         body: JSON.stringify({
                           action: "createAccount",
                           email: email.trim(),
-                          onConfirmUrl: "https://home.vibelive.site/landing-project-key.html",
+                          onConfirmUrl: "https://home.vibelive.site/project-key.html",
                         }),
                       });
                       if (res.ok) {
