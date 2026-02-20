@@ -16,7 +16,7 @@ export default function Terms() {
               Terms of Service
             </h1>
             <p className="text-[13px] text-muted">
-              Version 2.0 &middot; Operated by Makedo Inc. (California
+              Version 2.0 &middot; Operated by Makedo Inc (California
               C-Corporation)
             </p>
           </div>
@@ -27,7 +27,7 @@ export default function Terms() {
               <p>
                 These Terms of Service (&ldquo;Terms&rdquo;) govern access to
                 and use of VibeLive (the &ldquo;Service&rdquo;), operated by
-                Makedo Inc., a California corporation (&ldquo;VibeLive,&rdquo;
+                Makedo Inc, a California corporation (&ldquo;VibeLive,&rdquo;
                 &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;).
               </p>
               <p>
@@ -302,7 +302,7 @@ export default function Terms() {
 
             <Section id="indemnification" num={16} title="Indemnification">
               <p>
-                You agree to indemnify and hold harmless Makedo Inc. from claims
+                You agree to indemnify and hold harmless Makedo Inc from claims
                 arising out of:
               </p>
               <BulletList
@@ -417,7 +417,7 @@ export default function Terms() {
                 Contact
               </h2>
               <div className="p-5 bg-[#0c0c0c] border border-white/[0.08] rounded-lg text-[15px] text-[rgba(230,241,242,0.65)]">
-                <p className="mb-1">Makedo Inc.</p>
+                <p className="mb-1">Makedo Inc</p>
                 <p>
                   <a
                     href="mailto:hello@vibelive.site"
