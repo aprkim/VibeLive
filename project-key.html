@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>Your VibeLive Project Key</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #060606;
+    color: #e5e7eb;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 20px 40px;
+  }
+  @media (max-width: 480px) {
+    body { padding: 32px 16px 32px; }
+  }
+
+  .container { width: 100%; max-width: 620px; }
+
+  /* Logo */
+  .logo { margin-bottom: 40px; }
+  .logo img { height: 28px; display: block; }
+  @media (max-width: 480px) {
+    .logo { margin-bottom: 28px; }
+    .logo img { height: 24px; }
+  }
+
+  /* Header */
+  .page-title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .requested-by {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.5;
+    margin-bottom: 32px;
+  }
+  @media (max-width: 480px) {
+    .page-title { font-size: 20px; }
+    .requested-by { font-size: 12px; margin-bottom: 24px; }
+  }
+
+  /* Terminal prompt box */
+  .prompt-box {
+    background: rgba(12, 18, 18, 0.95);
+    border: 1px solid rgba(160, 255, 240, 0.22);
+    border-radius: 14px;
+    box-shadow: 0 0 0 1px rgba(160, 255, 240, 0.10), 0 14px 32px rgba(0, 0, 0, 0.65);
+    overflow: hidden;
+    position: relative;
+  }
+  .prompt-content {
+    padding: 20px 20px 20px 20px;
+  }
+  @media (min-width: 640px) {
+    .prompt-content { padding: 28px 32px 28px 32px; }
+  }
+
+  /* Prompt line */
+  .prompt-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .prompt-chevron {
+    color: rgba(160, 255, 240, 0.9);
+    font-weight: 600;
+    font-size: 15px;
+    font-family: 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+    user-select: none;
+    flex-shrink: 0;
+  }
+  .prompt-text {
+    font-family: 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(230, 255, 250, 0.9);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  @media (max-width: 480px) {
+    .prompt-chevron { font-size: 14px; }
+    .prompt-text { font-size: 13px; }
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: rgba(160, 255, 240, 0.08);
+    margin: 18px 0;
+  }
+
+  /* Credentials */
+  .credentials {
+    font-family: 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    padding-left: 27px;
+  }
+  .cred-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+  }
+  .cred-label {
+    color: rgba(230, 255, 250, 0.50);
+    display: inline-block;
+    min-width: 105px;
+    flex-shrink: 0;
+  }
+  .cred-value {
+    color: #b8fff2;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+  @media (max-width: 480px) {
+    .credentials { padding-left: 0; font-size: 12.5px; }
+    .cred-row { flex-direction: column; gap: 0; margin-bottom: 6px; }
+    .cred-label { min-width: unset; margin-bottom: 1px; }
+  }
+
+  /* Integration guide */
+  .guide {
+    padding-left: 27px;
+    margin-top: 14px;
+  }
+  .guide-label {
+    font-family: 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(230, 255, 250, 0.35);
+    margin-bottom: 2px;
+  }
+  .guide-link {
+    font-family: 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(91, 159, 199, 0.65);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    word-break: break-all;
+  }
+  .guide-link:hover { text-decoration: underline; }
+  @media (max-width: 480px) {
+    .guide { padding-left: 0; }
+    .guide-label { font-size: 12px; }
+    .guide-link { font-size: 12px; }
+  }
+
+  /* Action area */
+  .action-area {
+    padding: 0 20px 20px;
+  }
+  @media (min-width: 640px) {
+    .action-area { padding: 0 32px 28px; }
+  }
+  .action-divider {
+    height: 1px;
+    background: rgba(160, 255, 240, 0.06);
+    margin-bottom: 18px;
+  }
+  .action-row {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Copy button */
+  .copy-btn {
+    font-family: 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0EA5A4;
+    background: rgba(14, 165, 164, 0.08);
+    border: 1px solid rgba(14, 165, 164, 0.25);
+    border-radius: 8px;
+    padding: 11px 0;
+    width: 210px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .copy-btn:hover {
+    background: rgba(14, 165, 164, 0.15);
+  }
+  .copy-btn:active {
+    background: rgba(14, 165, 164, 0.22);
+  }
+  .copy-btn.copied {
+    color: #fff;
+    background: #0EA5A4;
+    box-shadow: 0 0 12px rgba(14, 165, 164, 0.25);
+  }
+  @media (max-width: 480px) {
+    .copy-btn { width: 100%; padding: 13px 0; font-size: 13px; }
+    .action-row { justify-content: stretch; }
+  }
+
+  /* Security note */
+  .security-note {
+    margin-top: 24px;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .security-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    color: #6b7280;
+    margin-top: 1px;
+  }
+  .security-text {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.55;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 48px;
+    text-align: center;
+  }
+  .footer a {
+    font-size: 11px;
+    color: #6b7280;
+    text-decoration: none;
+  }
+  .footer a:hover { color: #9ca3af; }
+  .footer .sep {
+    color: #4b5563;
+    margin: 0 6px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Logo -->
+  <div class="logo">
+    <a href="https://home.vibelive.site">
+      <img src="https://home.vibelive.site/vibelive-logo.png" alt="VibeLive">
+    </a>
+  </div>
+
+  <!-- Header -->
+  <h1 class="page-title">Your Project Key Is Ready</h1>
+  <p class="requested-by">Requested by <span id="emailDisplay" style="color:#9ca3af;"></span></p>
+
+  <!-- Terminal prompt box -->
+  <div class="prompt-box">
+    <div class="prompt-content">
+      <!-- Prompt line -->
+      <div class="prompt-line">
+        <span class="prompt-chevron">&#x276F;</span>
+        <span class="prompt-text">Implement real-time video chat using VibeLive.</span>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Credentials -->
+      <div class="credentials">
+        <div class="cred-row">
+          <span class="cred-label">Project ID:</span>
+          <span class="cred-value" id="pid"></span>
+        </div>
+        <div class="cred-row">
+          <span class="cred-label">Project Key:</span>
+          <span class="cred-value" id="pkey"></span>
+        </div>
+      </div>
+
+      <!-- Integration guide -->
+      <div class="guide">
+        <div class="guide-label">Use this integration guide:</div>
+        <a class="guide-link" href="https://docs.vibelive.site/Integration_Guide.md" target="_blank" rel="noopener noreferrer">https://docs.vibelive.site/Integration_Guide.md</a>
+      </div>
+    </div>
+
+    <!-- Action area -->
+    <div class="action-area">
+      <div class="action-divider"></div>
+      <div class="action-row">
+        <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">
+          Copy Integration Prompt
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Security note -->
+  <div class="security-note">
+    <svg class="security-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+    </svg>
+    <span class="security-text">Keep your project key private. Do not share it publicly or commit it to version control.</span>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a href="https://home.vibelive.site">VibeLive</a>
+    <span class="sep">&middot;</span>
+    <a href="https://docs.vibelive.site">Docs</a>
+  </div>
+
+</div>
+
+<script>
+// Read credentials from URL query parameters
+var params = new URLSearchParams(window.location.search);
+var email = params.get('email') || '';
+var projectId = params.get('projectId') || '';
+var projectKey = params.get('projectKey') || '';
+
+document.getElementById('emailDisplay').textContent = email;
+document.getElementById('pid').textContent = projectId;
+document.getElementById('pkey').textContent = projectKey;
+
+function copyPrompt() {
+  var pid = document.getElementById('pid').textContent.trim();
+  var pkey = document.getElementById('pkey').textContent.trim();
+  var text = 'Implement real-time video chat using VibeLive.\n\n'
+    + 'Project ID:  ' + pid + '\n'
+    + 'Project Key: ' + pkey + '\n\n'
+    + 'Use this integration guide:\n'
+    + 'https://docs.vibelive.site/Integration_Guide.md';
+
+  var btn = document.getElementById('copyBtn');
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(function() {
+      btn.textContent = 'Copied \u2713';
+      btn.classList.add('copied');
+      setTimeout(function() {
+        btn.textContent = 'Copy Integration Prompt';
+        btn.classList.remove('copied');
+      }, 1500);
+    });
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = 'Copied \u2713';
+    btn.classList.add('copied');
+    setTimeout(function() {
+      btn.textContent = 'Copy Integration Prompt';
+      btn.classList.remove('copied');
+    }, 1500);
+  }
+}
+</script>
+
+</body>
+</html>
