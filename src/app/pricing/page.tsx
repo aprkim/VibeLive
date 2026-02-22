@@ -24,23 +24,23 @@ export default function PricingPage() {
           <div className="text-center mb-16">
             <h1 className="text-3xl md:text-4xl font-bold text-text mb-3">Pricing</h1>
             <p className="text-base text-muted max-w-md mx-auto">
-              Start experimenting for free. Upgrade when you&apos;re ready to build.
+              Start free. Ship fast. Scale when ready.
             </p>
           </div>
 
           {/* Pricing cards */}
           <div className="grid md:grid-cols-2 gap-6 max-w-[680px] mx-auto">
 
-            {/* Free — Sandbox */}
+            {/* Free — Starter */}
             <div className="rounded-2xl border border-[#1a1a1a] bg-[#0c0c0c] p-8 flex flex-col">
               <div className="mb-6">
-                <span className="inline-block text-xs font-medium text-muted/80 uppercase tracking-wider mb-3">Sandbox</span>
+                <span className="inline-block text-xs font-medium text-muted uppercase tracking-wider mb-3">Starter</span>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-3xl font-bold text-text">$0</span>
                   <span className="text-sm text-muted">/ forever</span>
                 </div>
                 <p className="text-sm text-muted">
-                  Explore what&apos;s possible with AI + live video.
+                  Prototype live AI features.
                 </p>
               </div>
 
@@ -66,8 +66,8 @@ export default function PricingPage() {
                   Limited session length
                 </li>
                 {/* Attribution intentionally flexible — may change */}
-                <li className="flex items-start gap-2.5 text-sm text-muted/60">
-                  <svg className="w-4 h-4 text-muted/40 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                <li className="flex items-start gap-2.5 text-sm text-muted">
+                  <svg className="w-4 h-4 text-accent mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                   &quot;Powered by VibeLive&quot; attribution
                 </li>
               </ul>
@@ -89,13 +89,13 @@ export default function PricingPage() {
             {/* Pro — Builder */}
             <div className="rounded-2xl border border-accent/20 bg-[#0c0c0c] p-8 flex flex-col relative">
               <div className="mb-6">
-                <span className="inline-block text-xs font-medium text-accent uppercase tracking-wider mb-3">Builder Pro</span>
+                <span className="inline-block text-xs font-medium text-accent uppercase tracking-wider mb-3">Builder</span>
                 <div className="flex items-baseline gap-1 mb-2">
                   <span className="text-3xl font-bold text-text">$10</span>
                   <span className="text-sm text-muted">/ month</span>
                 </div>
                 <p className="text-sm text-muted">
-                  For building real experiences.
+                  Power production-ready experiences.
                 </p>
               </div>
 
@@ -131,14 +131,14 @@ export default function PricingPage() {
                 onClick={() => { setModalOpen(true); setSubmitted(false); setEmail(""); }}
                 className="btn-primary w-full py-3 text-sm min-w-0"
               >
-                Upgrade to Pro
+                Upgrade to Builder
               </button>
             </div>
           </div>
 
           {/* Future plans note */}
           <div className="text-center mt-14">
-            <p className="text-sm text-muted/50">
+            <p className="text-sm text-muted">
               Teams, higher usage, and advanced features coming soon.
             </p>
           </div>
@@ -169,7 +169,7 @@ export default function PricingPage() {
             {!submitted ? (
               <>
                 <h3 className="text-xl font-bold text-text mb-2">
-                  Upgrade to Pro
+                  Upgrade to Builder
                 </h3>
                 <p className="text-sm text-muted mb-6">
                   Enter your email and we&#39;ll reach out with Builder plan access.
@@ -215,7 +215,7 @@ export default function PricingPage() {
                     disabled={submitting}
                     className="btn-primary w-full py-3 text-base disabled:opacity-50"
                   >
-                    {submitting ? "Submitting..." : "Request Pro access"}
+                    {submitting ? "Submitting..." : "Request Builder access"}
                   </button>
                 </form>
               </>

@@ -14,6 +14,12 @@ export default function HeaderLight() {
           >
             Docs
           </a>
+          <a
+            href="https://built.vibelive.site/"
+            className="hidden sm:block text-muted hover:text-text transition-colors text-sm font-medium"
+          >
+            Builds
+          </a>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-get-access'))}
             className="text-xs font-medium px-4 py-1.5 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors"

@@ -12,7 +12,7 @@ export default function HeroV4Claude7V2() {
   const [projectId, setProjectId] = useState("");
   const [projectKey, setProjectKey] = useState("");
 
-  const integrationPrompt = `Implement real-time video chat using VibeLive.\n\nProject ID:  ${projectId}\nProject Key: ${projectKey}\n\nUse this integration guide:\nhttps://docs.vibelive.site/Integration_Guide.md`;
+  const integrationPrompt = `Implement real-time video chat using VibeLive.\n\nProject ID:  ${projectId}\nProject Key: ${projectKey}\n\nUse this integration guide:\nhttps://vibelive.site/get-started`;
 
   const handleGenerate = useCallback(async () => {
     setLoading(true);
@@ -224,13 +224,13 @@ export default function HeroV4Claude7V2() {
                     Use this integration guide:
                   </p>
                   <a
-                    href="https://docs.vibelive.site/Integration_Guide.md"
+                    href="https://vibelive.site/get-started"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-mono hover:underline"
                     style={{ fontSize: '13px', color: 'rgba(91, 159, 199, 0.65)', lineHeight: 1.55 }}
                   >
-                    https://docs.vibelive.site/Integration_Guide.md
+                    https://vibelive.site/get-started
                   </a>
                 </div>
               </div>

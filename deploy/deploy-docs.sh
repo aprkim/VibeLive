@@ -2,9 +2,9 @@
 set -e
 
 # ============================================================
-# Deploy vibelive.site → Firebase Hosting (vibelive-home)
+# Deploy docs.vibelive.site → Firebase Hosting (vibelive-docs)
 #
-# Usage:  ./deploy/deploy-home.sh
+# Usage:  ./deploy/deploy-docs.sh
 # ============================================================
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -28,13 +28,13 @@ cleanup() {
 trap cleanup EXIT
 
 echo "==> Checking working tree..."
-STASH_OUTPUT=$(git stash push -m "deploy-home auto-stash" 2>&1)
+STASH_OUTPUT=$(git stash push -m "deploy-docs auto-stash" 2>&1)
 if [[ "$STASH_OUTPUT" != *"No local changes"* ]]; then
   STASHED=true
   echo "    Stashed uncommitted changes."
 fi
 
-echo "==> Applying vibelive.site config..."
+echo "==> Applying config..."
 cp deploy/home/page.tsx    src/app/page.tsx
 cp deploy/home/layout.tsx  src/app/layout.tsx
 cp deploy/home/next.config.mjs next.config.mjs
@@ -51,7 +51,7 @@ echo "    Build complete → out/"
 echo "==> Splitting site assets..."
 bash deploy/split-sites.sh
 
-echo "==> Deploying to Firebase Hosting (home)..."
-npx firebase deploy --only hosting:home
+echo "==> Deploying to Firebase Hosting (docs)..."
+npx firebase deploy --only hosting:docs
 echo ""
-echo "==> Done! https://vibelive.site/ is live."
+echo "==> Done! https://docs.vibelive.site/ is live."

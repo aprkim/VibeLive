@@ -1,9 +1,91 @@
 {
-  "hosting": {
-    "source": ".",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "frameworksBackend": {
-      "region": "us-central1"
+  "hosting": [
+    {
+      "target": "home",
+      "public": "out-home",
+      "cleanUrls": true,
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(js|css|svg|png|jpg|jpeg|gif|ico|woff|woff2)",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          ]
+        }
+      ],
+      "redirects": [
+        {
+          "source": "/docs",
+          "destination": "https://docs.vibelive.site",
+          "type": 301
+        },
+        {
+          "source": "/get-started",
+          "destination": "/get-started.md",
+          "type": 301
+        }
+      ],
+      "rewrites": []
+    },
+    {
+      "target": "built",
+      "public": "out-built",
+      "cleanUrls": true,
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(js|css|svg|png|jpg|jpeg|gif|ico|woff|woff2)",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          ]
+        }
+      ],
+      "rewrites": []
+    },
+    {
+      "target": "docs",
+      "public": "out-docs",
+      "cleanUrls": true,
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(js|css|svg|png|jpg|jpeg|gif|ico|woff|woff2)",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          ]
+        }
+      ],
+      "rewrites": []
+    },
+    {
+      "target": "console",
+      "public": "out-console",
+      "cleanUrls": true,
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "headers": [
+        {
+          "source": "**/*.@(js|css|svg|png|jpg|jpeg|gif|ico|woff|woff2)",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          ]
+        }
+      ],
+      "rewrites": []
+    },
+    {
+      "target": "coming",
+      "public": "out-coming",
+      "cleanUrls": true,
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "CNAME"],
+      "headers": [
+        {
+          "source": "**/*.@(js|css|svg|png|jpg|jpeg|gif|ico|woff|woff2)",
+          "headers": [
+            { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          ]
+        }
+      ],
+      "rewrites": []
     }
-  }
+  ]
 }

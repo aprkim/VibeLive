@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "VibeLive — Real-time video for modern apps",
     description: "Add real human connection to your product in minutes.",
-    url: "https://home.vibelive.site",
+    url: "https://vibelive.site",
     siteName: "VibeLive",
     images: [
       {

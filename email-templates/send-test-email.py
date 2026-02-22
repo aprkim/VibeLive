@@ -28,7 +28,7 @@ def send_email(sender, recipient, app_password, template_path):
         html = f.read()
 
     # Replace placeholder with landing page URL
-    html = html.replace("{{PROJECT_KEY_URL}}", "https://home.vibelive.site/project-key.html")
+    html = html.replace("{{PROJECT_KEY_URL}}", "https://vibelive.site/project-key.html")
 
     # Build message
     msg = MIMEMultipart("alternative")

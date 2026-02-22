@@ -5,7 +5,7 @@ export default function HeaderDocs() {
     <header className="sticky top-0 z-50 w-full py-4 px-6 bg-card/90 backdrop-blur-sm border-b border-border">
       <div className="max-w-[980px] mx-auto flex items-center justify-between">
         <div className="flex items-center">
-          <a href="https://home.vibelive.site/"><img src="/vibelive-logo.png" alt="VibeLive" className="h-7" /></a>
+          <a href="https://vibelive.site/"><img src="/vibelive-logo.png" alt="VibeLive" className="h-7" /></a>
         </div>
         <nav className="flex items-center gap-6">
           <a
@@ -13,6 +13,12 @@ export default function HeaderDocs() {
             className="hidden sm:block text-muted hover:text-text transition-colors text-sm font-medium"
           >
             Docs
+          </a>
+          <a
+            href="https://built.vibelive.site/"
+            className="hidden sm:block text-muted hover:text-text transition-colors text-sm font-medium"
+          >
+            Builds
           </a>
           <button
             onClick={() => window.dispatchEvent(new Event('open-get-access'))}

@@ -16,6 +16,10 @@
 # next.js
 /.next/
 /out/
+/out-home/
+/out-built/
+/out-docs/
+/out-console/
 
 # production
 /build

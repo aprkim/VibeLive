@@ -106,24 +106,13 @@ export default function Privacy() {
               <BulletList
                 items={[
                   "Developer email address",
-                  "Authentication credentials",
+                  "Developer authentication credentials",
+                  "End-user authentication tokens and session credentials",
                 ]}
               />
 
               <h3 className="text-[15px] font-semibold text-text mt-4 mb-2">
-                d. Transcription Data
-              </h3>
-              <p>
-                If transcription functionality is enabled, we may temporarily
-                store transcription text generated during sessions for the
-                limited purpose of providing the transcription feature.
-              </p>
-              <p>
-                Transcriptions are not used to train machine learning models.
-              </p>
-
-              <h3 className="text-[15px] font-semibold text-text mt-4 mb-2">
-                e. Cookies and Analytics
+                d. Cookies and Analytics
               </h3>
               <p>
                 We use cookies and similar technologies for authentication,
@@ -133,20 +122,32 @@ export default function Privacy() {
                 We use Google Analytics to understand usage patterns and improve
                 the Service. Google Analytics may collect information such as IP
                 address, device information, and interaction data in accordance
-                with its own privacy practices.
+                with its own privacy practices. You can opt out of Google
+                Analytics by installing the{" "}
+                <a
+                  href="https://tools.google.com/dlpage/gaoptout"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent/80 transition-colors"
+                >
+                  Google Analytics Opt-out Browser Add-on
+                </a>
+                .
               </p>
             </Section>
 
-            <Section id="recording" num={4} title="Recording">
+            <Section id="media" num={4} title="Media Handling">
               <p>
-                VibeLive does not store or retain video or audio recordings.
+                As a video infrastructure provider, VibeLive routes and forwards
+                real-time audio and video streams as part of normal SFU
+                (Selective Forwarding Unit) operation. This transmission is
+                transient — VibeLive does not analyze, store, or retain any
+                media content.
               </p>
               <p>
                 If developers enable recording functionality within their
                 applications, recording occurs within the developer&rsquo;s
                 environment and outside of Makedo&rsquo;s storage systems.
-              </p>
-              <p>
                 Developers are solely responsible for obtaining legally
                 sufficient consent from participants and complying with all
                 applicable recording, wiretap, and privacy laws.
@@ -161,7 +162,6 @@ export default function Privacy() {
                   "Improve performance, reliability, and security",
                   "Prevent abuse, fraud, and misuse",
                   "Provide billing and account management (including through Stripe)",
-                  "Deliver optional transcription functionality",
                 ]}
               />
             </Section>
@@ -172,7 +172,6 @@ export default function Privacy() {
                 items={[
                   "IP addresses and access logs: up to 60 days",
                   "Session metadata: for the duration of an active account and up to 90 days after account termination",
-                  "Transcriptions: up to 30 days unless deleted earlier",
                   "Analytics data: according to Google Analytics retention settings",
                 ]}
               />
@@ -240,14 +239,26 @@ export default function Privacy() {
                 correct, delete, or request information about the personal
                 information we collect.
               </p>
+
+              <h3 className="text-[15px] font-semibold text-text mt-4 mb-2">
+                Account Closure &amp; Data Deletion
+              </h3>
               <p>
-                To submit a request, contact:{" "}
+                To close your account and request deletion of your data, email{" "}
                 <a
                   href="mailto:contact@makedo.com"
                   className="text-accent hover:text-accent/80 transition-colors"
                 >
                   contact@makedo.com
-                </a>
+                </a>{" "}
+                with the subject line &ldquo;Account Deletion Request.&rdquo;
+                Include the email address associated with your account. We will
+                confirm receipt and complete the deletion within 5 business days.
+              </p>
+              <p>
+                For any other privacy-related requests — such as accessing,
+                correcting, or exporting your data — contact us at the same
+                address.
               </p>
 
               <h3 className="text-[15px] font-semibold text-text mt-4 mb-2">
@@ -262,6 +273,28 @@ export default function Privacy() {
               <p>
                 We will not discriminate against you for exercising your privacy
                 rights.
+              </p>
+
+              <h3 className="text-[15px] font-semibold text-text mt-4 mb-2">
+                European Privacy Rights
+              </h3>
+              <p>
+                If you are located in the European Economic Area (EEA) or
+                United Kingdom, you may have additional rights under the
+                General Data Protection Regulation (GDPR), including the right
+                to access, correct, delete, restrict processing of, or port
+                your personal data. You may also have the right to object to
+                processing or withdraw consent at any time.
+              </p>
+              <p>
+                To exercise these rights, contact us at{" "}
+                <a
+                  href="mailto:contact@makedo.com"
+                  className="text-accent hover:text-accent/80 transition-colors"
+                >
+                  contact@makedo.com
+                </a>
+                .
               </p>
             </Section>
 

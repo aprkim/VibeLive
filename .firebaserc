@@ -1,5 +1,27 @@
 {
   "projects": {
     "default": "vibelive-home"
-  }
+  },
+  "targets": {
+    "vibelive-home": {
+      "hosting": {
+        "home": [
+          "vibelive-home"
+        ],
+        "built": [
+          "vibelive-built"
+        ],
+        "docs": [
+          "vibelive-docs"
+        ],
+        "console": [
+          "vibelive-console"
+        ],
+        "coming": [
+          "vibelive-coming"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

@@ -3,15 +3,15 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Built with VibeLive — Showcase",
-  description: "Real vibecoded apps powered by live human connection. See what builders are creating with VibeLive.",
+  title: "VibeLive — Real-time video for modern apps",
+  description: "Add real human connection to your product in minutes.",
   icons: {
     icon: "/favicon-vibelive.png",
   },
   openGraph: {
-    title: "Built with VibeLive — Showcase",
-    description: "Real vibecoded apps powered by live human connection. See what builders are creating with VibeLive.",
-    url: "https://built.vibelive.site",
+    title: "VibeLive — Real-time video for modern apps",
+    description: "Add real human connection to your product in minutes.",
+    url: "https://vibelive.site",
     siteName: "VibeLive",
     images: [
       {
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Built with VibeLive — Showcase",
-    description: "Real vibecoded apps powered by live human connection. See what builders are creating with VibeLive.",
+    title: "VibeLive — Real-time video for modern apps",
+    description: "Add real human connection to your product in minutes.",
     images: ["https://vibelive.site/social/og-image.png"],
     site: "@vibelivehq",
   },

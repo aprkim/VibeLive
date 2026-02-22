@@ -24,7 +24,7 @@ export default function Terms() {
               <p>
                 These Terms of Service (&ldquo;Terms&rdquo;) govern access to
                 and use of VibeLive (the &ldquo;Service&rdquo;), operated by
-                Makedo Inc, a California corporation (&ldquo;VibeLive,&rdquo;
+                Makedo Inc, a California corporation (&ldquo;Makedo,&rdquo;
                 &ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;).
               </p>
               <p>
@@ -50,7 +50,6 @@ export default function Terms() {
                   "Screen sharing capabilities",
                   "Room/session creation",
                   "API and SDK integrations",
-                  "Optional transcription functionality",
                   "Limited session metadata storage",
                   "Beta or experimental features",
                 ]}
@@ -116,24 +115,21 @@ export default function Terms() {
             </Section>
 
             <Section
-              id="recording"
+              id="media"
               num={6}
-              title="Recording and Transcription"
+              title="Media Handling and Recording"
             >
+              <p>
+                VibeLive routes and forwards real-time audio and video streams
+                as part of normal SFU (Selective Forwarding Unit) operation.
+                This transmission is transient — VibeLive does not analyze,
+                store, or retain any media content.
+              </p>
               <p>Unless explicitly stated otherwise:</p>
               <BulletList
                 items={[
-                  "VibeLive does not store video or audio recordings.",
                   "Any recording functionality is controlled by developers and/or occurs within end-user environments.",
-                  "Developers are solely responsible for obtaining legally required consent before enabling recording or transcription.",
-                ]}
-              />
-              <p>If transcription features are enabled:</p>
-              <BulletList
-                items={[
-                  "Transcriptions may be processed using third-party AI providers.",
-                  "Developers are responsible for notifying end users of such processing.",
-                  "VibeLive may store transcription data as described in the Privacy Policy.",
+                  "Developers are solely responsible for obtaining legally required consent before enabling recording.",
                 ]}
               />
               <p>
@@ -191,7 +187,10 @@ export default function Terms() {
                   "Modify or discontinue plan features",
                 ]}
               />
-              <p>Free or trial plans may have usage restrictions.</p>
+              <p>
+                All plans — including trial, free, and paid — may be subject
+                to usage restrictions.
+              </p>
             </Section>
 
             <Section
@@ -233,7 +232,7 @@ export default function Terms() {
             >
               <p>
                 The Service may rely on third-party providers, including cloud
-                hosting, AI services, or payment processors.
+                hosting and payment processors.
               </p>
               <p>
                 We are not responsible for third-party service performance.
@@ -299,8 +298,8 @@ export default function Terms() {
 
             <Section id="indemnification" num={16} title="Indemnification">
               <p>
-                You agree to indemnify and hold harmless Makedo Inc from claims
-                arising out of:
+                You agree to indemnify and hold harmless VibeLive and its parent
+                company Makedo Inc from claims arising out of:
               </p>
               <BulletList
                 items={[
@@ -364,6 +363,10 @@ export default function Terms() {
               </p>
               <p>You may stop using the Service at any time.</p>
               <p>
+                Upon termination, you may request deletion of your data in
+                accordance with our Privacy Policy.
+              </p>
+              <p>
                 Provisions that by nature should survive termination shall
                 survive.
               </p>
@@ -403,6 +406,10 @@ export default function Terms() {
 
             <Section id="changes" num={23} title="Changes to Terms">
               <p>We may update these Terms.</p>
+              <p>
+                If we make material changes, we will update the
+                &ldquo;Last Updated&rdquo; date at the top of these Terms.
+              </p>
               <p>Continued use constitutes acceptance.</p>
             </Section>
 
