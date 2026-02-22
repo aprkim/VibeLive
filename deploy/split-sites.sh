@@ -44,13 +44,13 @@ copy_shared() {
 # ── HOME site ───────────────────────────────────────────────
 rm -rf out-home && mkdir -p out-home
 copy_shared out-home
-cp out/index.html out-home/            # landing page
+cp out/index.html out-home/preview.html # main site → /preview
+cp "$REPO_ROOT/../coming/index.html" out-home/index.html  # coming soon → /
 cp out/pricing.html out-home/
 cp out/privacy.html out-home/
 cp out/terms.html out-home/
 cp out/submit.html out-home/
 cp out/light.html out-home/
-cp out/preview.html out-home/
 cp out/integration_guide.html out-home/ 2>/dev/null || true
 cp out/get-started.md out-home/ 2>/dev/null || true
 # Copy .txt variants if they exist (Next.js RSC payloads)
