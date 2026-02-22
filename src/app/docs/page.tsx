@@ -3,7 +3,6 @@
 import { useState } from "react";
 import HeaderDocs from "@/components/HeaderDocs";
 import Footer from "@/components/Footer";
-import CTAV2 from "@/components/CTAV2";
 
 const WORKER_URL = 'https://vibelive-auth-proxy.aprkim.workers.dev';
 
@@ -327,7 +326,6 @@ export default function DocsPage() {
           </section>
 
         </div>
-        <CTAV2 />
         <Footer />
       </main>
     </div>
