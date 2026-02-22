@@ -22,7 +22,7 @@ export default function HeaderLight() {
           </a>
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-get-access'))}
-            className="text-xs font-medium px-4 py-1.5 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
+            className="text-sm font-medium px-4 py-1.5 rounded-full bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
           >
             Get Access
           </button>
