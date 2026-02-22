@@ -110,12 +110,13 @@ export default function CTAV2() {
         }),
       });
 
-      if (res.ok) {
-        const data = await res.json();
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch { data = { error: text }; }
+      if (res.ok && data.projectId) {
         setCredentials({ projectId: data.projectId, projectKey: data.projectAuthToken });
         setModalState("success");
       } else {
-        const data = await res.json().catch(() => ({}));
         setError(data.error || "Something went wrong. Please try again.");
         setModalState("error");
       }

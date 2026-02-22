@@ -23,7 +23,9 @@ export default function DocsPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'createTrialProject' }),
       });
-      const data = await res.json();
+      const text = await res.text();
+      let data;
+      try { data = JSON.parse(text); } catch { data = { error: text }; }
       if (res.ok && data.projectId) {
         setProjectId(data.projectId);
         setProjectKey(data.projectAuthToken);
