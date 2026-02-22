@@ -51,6 +51,7 @@ cp out/privacy.html out-home/
 cp out/terms.html out-home/
 cp out/submit.html out-home/
 cp out/light.html out-home/
+cp out/project-key.html out-home/ 2>/dev/null || true
 cp out/integration_guide.html out-home/ 2>/dev/null || true
 cp out/get-started.md out-home/ 2>/dev/null || true
 # Copy .txt variants if they exist (Next.js RSC payloads)
