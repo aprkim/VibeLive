@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GetAccessModal from "@/components/GetAccessModal";
 import Gallery from "@/components/showcase/Gallery";
 import { getApprovedItems } from "@/lib/showcase";
 
@@ -70,6 +71,7 @@ export default function BuiltWithPage() {
       </main>
 
       <Footer />
+      <GetAccessModal />
     </div>
   );
 }
