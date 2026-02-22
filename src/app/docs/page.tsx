@@ -71,7 +71,7 @@ export default function DocsPage() {
               {generated && (
                 <button
                   onClick={() => {
-                    const text = `Implement real-time video chat using VibeLive.\n\nProject ID:  ${projectId}\nProject Key: ${projectKey}\n\nUse this integration guide:\nhttps://docs.vibelive.site/Integration_Guide.md`;
+                    const text = `Implement real-time video chat using VibeLive.\n\nProject ID:  ${projectId}\nProject Key: ${projectKey}\n\nUse this integration guide:\nhttps://vibelive.site/get-started`;
                     navigator.clipboard.writeText(text);
                     const btn = document.getElementById('docs-copy-btn');
                     if (btn) {
@@ -117,7 +117,7 @@ export default function DocsPage() {
                           <span style={{ color: 'rgba(230, 255, 250, 0.9)' }}>{projectKey}</span>
                         </p>
                         <p style={{ color: 'rgba(230, 255, 250, 0.50)', marginBottom: '2px' }}>Use this integration guide:</p>
-                        <p><span style={{ color: 'rgba(91, 159, 199, 0.65)', fontSize: '14px' }}>https://docs.vibelive.site/Integration_Guide.md</span></p>
+                        <p><span style={{ color: 'rgba(91, 159, 199, 0.65)', fontSize: '14px' }}>https://vibelive.site/get-started</span></p>
                       </>
                     )}
                   </div>
@@ -159,7 +159,7 @@ export default function DocsPage() {
                   <div className="flex justify-end">
                     <button
                       onClick={() => {
-                        const text = `Implement real-time video chat using VibeLive.\n\nProject ID:  ${projectId}\nProject Key: ${projectKey}\n\nUse this integration guide:\nhttps://docs.vibelive.site/Integration_Guide.md`;
+                        const text = `Implement real-time video chat using VibeLive.\n\nProject ID:  ${projectId}\nProject Key: ${projectKey}\n\nUse this integration guide:\nhttps://vibelive.site/get-started`;
                         navigator.clipboard.writeText(text);
                         const btn = document.getElementById('docs-copy-btn-mobile');
                         if (btn) {
@@ -249,14 +249,14 @@ export default function DocsPage() {
                   </tr>
                   <tr>
                     <td className="px-4 py-3 text-text font-medium">API Key</td>
-                    <td className="px-4 py-3">Issued after access request</td>
+                    <td className="px-4 py-3">Generated instantly</td>
                     <td className="px-4 py-3">Configurable room size, persistent rooms, custom themes</td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p className="text-xs text-muted mt-3">
-              Request an API key from the <button onClick={() => (typeof window !== 'undefined') && window.dispatchEvent(new CustomEvent('open-get-access'))} className="text-accent hover:underline">Get Access</button> form.
+              Generate a project key instantly from the Quick Start above, or request full access from the <button onClick={() => (typeof window !== 'undefined') && window.dispatchEvent(new CustomEvent('open-get-access'))} className="text-accent hover:underline">Get Access</button> form.
               Guest mode works immediately with no signup.
             </p>
           </section>
