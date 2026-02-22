@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GetAccessModal from "@/components/GetAccessModal";
 
 export default function Privacy() {
   return (
@@ -335,6 +336,7 @@ export default function Privacy() {
           </div>
         </div>
         <Footer />
+        <GetAccessModal />
       </main>
     </div>
   );

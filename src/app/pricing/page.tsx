@@ -2,6 +2,7 @@
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GetAccessModal from "@/components/GetAccessModal";
 import { useState } from "react";
 
 export default function PricingPage() {
@@ -144,6 +145,7 @@ export default function PricingPage() {
           </div>
         </div>
         <Footer />
+        <GetAccessModal />
       </main>
 
       {/* Upgrade Modal */}

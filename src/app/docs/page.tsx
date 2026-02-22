@@ -3,6 +3,7 @@
 import { useState } from "react";
 import HeaderDocs from "@/components/HeaderDocs";
 import Footer from "@/components/Footer";
+import GetAccessModal from "@/components/GetAccessModal";
 
 const WORKER_URL = 'https://vibelive-auth-proxy.aprkim.workers.dev';
 
@@ -327,6 +328,7 @@ export default function DocsPage() {
 
         </div>
         <Footer />
+        <GetAccessModal />
       </main>
     </div>
   );

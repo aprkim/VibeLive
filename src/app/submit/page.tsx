@@ -5,6 +5,7 @@ import type { ShowcaseCategory } from "@/types/showcase";
 import { CATEGORIES } from "@/types/showcase";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GetAccessModal from "@/components/GetAccessModal";
 
 function isValidUrl(s: string): boolean {
   try {
@@ -307,6 +308,7 @@ export default function SubmitPage() {
       </main>
 
       <Footer />
+      <GetAccessModal />
     </div>
   );
 }

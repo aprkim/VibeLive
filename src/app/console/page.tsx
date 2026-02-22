@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GetAccessModal from "@/components/GetAccessModal";
 
 export default function ConsolePage() {
   return (
@@ -21,6 +22,7 @@ export default function ConsolePage() {
       </main>
 
       <Footer />
+      <GetAccessModal />
     </div>
   );
 }

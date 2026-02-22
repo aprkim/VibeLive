@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GetAccessModal from "@/components/GetAccessModal";
 
 export default function Terms() {
   return (
@@ -435,6 +436,7 @@ export default function Terms() {
           </div>
         </div>
         <Footer />
+        <GetAccessModal />
       </main>
     </div>
   );
